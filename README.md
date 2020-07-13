@@ -1,3 +1,5 @@
+# Rails Mini Project
+
 ## Objectives
 
 1. Build a small Rails project
