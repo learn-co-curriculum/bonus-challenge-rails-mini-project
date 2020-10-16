@@ -17,4 +17,3 @@ For this mini project, you'll create a small Rails app. The topic is open-ended.
 - Write model tests 
 - Practice refactoring
 - Make it pretty with Bootstrap or Materialize (look into the [Rails Asset Pipeline](http://guides.rubyonrails.org/asset_pipeline.html))
-<p class='util--hide'>View <a href='https://learn.co/lessons/bonus-challenge-rails-mini-project'>Bonus Challenge: Rails Mini Project</a> on Learn.co and start learning to code for free.</p>
