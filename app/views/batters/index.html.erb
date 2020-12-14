@@ -1,0 +1,6 @@
+<h1>Batters</h1>
+<%@batters.each do |batter|%>
+    <p><%= link_to batter.name, batter_path(batter)%>, Tier: <%= batter.tier %></p>
+<%end%>
+<%= link_to "Create a new batter", new_batter_path%>
+<%= link_to 'Main Menu', main_path %>

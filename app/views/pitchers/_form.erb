@@ -1,0 +1,10 @@
+<%= form_for @pitcher do |f|%>
+    <p><%= f.label 'Pitcher Name:'%></p>
+    <%= f.text_field :name %><br>
+
+    <p><%= f.label 'Pitcher Tier:'%></p>
+    <%= f.number_field :tier, min: 1, max: 4%><br><br>
+
+    <%= f.submit %>
+
+<%end%>

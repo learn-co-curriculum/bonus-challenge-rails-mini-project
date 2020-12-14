@@ -1,0 +1,5 @@
+<h1>Outcome: <%= @outcome %></h1>
+<p><%= @plate_appearance.batter.name %> vs. <%= @plate_appearance.pitcher.name%>: <%= @outcome %>.</p>
+<%= link_to "All Plate Appearances", plate_appearances_path%>
+<br>
+<%= link_to 'Main Menu', main_path %>

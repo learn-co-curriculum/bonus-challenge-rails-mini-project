@@ -1,0 +1,6 @@
+<h1>All Plate Appearances</h1>
+<% @plate_appearances.each do |pa| %>
+    <p><%= pa.batter.name %> vs. <%= pa.pitcher.name%>: <%= pa.outcome%>.</p>
+<%end%>
+<%= link_to 'Main Menu', main_path %>
+ 

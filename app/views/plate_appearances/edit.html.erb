@@ -1,0 +1,10 @@
+<h1>Plate Appearance Simulator</h1>
+<%= form_for @plate_appearance do |f| %>
+    <h3><%= f.label 'Batter:'%></h3>
+    <%= f.collection_select(:batter_id, Batter.all, :id, :name) %>
+
+    <h3><%= f.label 'Pitcher:'%></h3>
+    <%= f.collection_select(:pitcher_id, Pitcher.all, :id, :name) %>
+
+    <%= f.submit 'Simulate At-Bat'%>
+<%end%> 

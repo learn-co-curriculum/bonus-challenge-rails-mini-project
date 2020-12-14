@@ -1,0 +1,2247 @@
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateArtists (20201213230516)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "artists" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "bio" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201213230516"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateGenres (20201213230535)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "genres" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (14.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201213230535"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateSongs (20201213230613)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "songs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "artist_id" integer, "genre_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201213230613"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-12-13 23:21:40.846387"], ["updated_at", "2020-12-13 23:21:40.846387"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/artists/new" for ::1 at 2020-12-14 10:43:27 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ArtistsController#new as HTML
+  Rendering artists/new.html.erb within layouts/application
+  Rendered artists/new.html.erb within layouts/application (26.7ms)
+Completed 200 OK in 508ms (Views: 489.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/plate_appearances/new" for ::1 at 2020-12-14 11:03:09 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PlateAppearancesController#new as HTML
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant PlateAppearancesController::PlateAppearance):
+  
+app/controllers/plate_appearances_controller.rb:11:in `new'
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.8ms)
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (41.6ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/plate_appearances/new" for ::1 at 2020-12-14 11:07:03 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PlateAppearancesController#new as HTML
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::StatementInvalid (Could not find table 'plate_appearances'):
+  
+app/controllers/plate_appearances_controller.rb:11:in `new'
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.7ms)
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (24.3ms)
+Started GET "/plate_appearance/new" for ::1 at 2020-12-14 11:07:14 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/plate_appearance/new"):
+  
+actionpack (5.0.7.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.7.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.7.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.7.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.7.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.7.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.7.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.7.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.0.7.2) lib/rails/engine.rb:522:in `call'
+rack (2.2.3) lib/rack/handler/webrick.rb:95:in `service'
+/Users/davidwisecarver/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+/Users/davidwisecarver/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+/Users/davidwisecarver/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered collection of /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [21 times] (7.1ms)
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (11.7ms)
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (50.4ms)
+Started GET "/plate_appearances/new" for ::1 at 2020-12-14 11:07:41 -0800
+Processing by PlateAppearancesController#new as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::StatementInvalid (Could not find table 'plate_appearances'):
+  
+app/controllers/plate_appearances_controller.rb:11:in `new'
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.4ms)
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (20.7ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+DEPRECATION WARNING: Passing #original_exception is deprecated and has no effect. Exceptions will automatically capture the original exception. (called from require at bin/rails:4)
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateBatters (20201214191436)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "batters" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "tier" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201214191436"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreatePitchers (20201214191457)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "pitchers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "tier" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201214191457"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreatePlateAppearances (20201214191518)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "plate_appearances" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "tier" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201214191518"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-12-14 19:15:31.021585"], ["updated_at", "2020-12-14 19:15:31.021585"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/plate_appearances/new" for ::1 at 2020-12-14 11:15:57 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PlateAppearancesController#new as HTML
+  Rendering plate_appearances/new.html.erb within layouts/application
+  Rendered plate_appearances/new.html.erb within layouts/application (37.7ms)
+Completed 500 Internal Server Error in 63ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `batter_id' for #<PlateAppearance:0x00007fa00b44e9d8>
+Did you mean?  batter
+               batter=):
+    1: <h1>Plate Appearance Simulator</h1>
+    2: <%= form_for @plate_appearance do |f| %>
+    3:     <h3><%= f.label 'Batter:'%></h3>
+    4:     <%= f.collection_select(:batter_id, Batter.all, :id, :name) %>
+    5: 
+    6:     <h3><%= f.label 'Pitcher:'%></h3>
+    7:     <%= f.collection_select(:pitcher_id, Pitcher.all, :id, :name) %>
+  
+app/views/plate_appearances/new.html.erb:4:in `block in _app_views_plate_appearances_new_html_erb___2556136714788364712_70162692834940'
+app/views/plate_appearances/new.html.erb:2:in `_app_views_plate_appearances_new_html_erb___2556136714788364712_70162692834940'
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.6ms)
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (23.1ms)
+Started GET "/batters/new" for ::1 at 2020-12-14 11:16:53 -0800
+Processing by BattersController#new as HTML
+  Rendering batters/new.html.erb within layouts/application
+  Rendered batters/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 263ms (Views: 252.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/batters/new" for ::1 at 2020-12-14 11:28:41 -0800
+Processing by BattersController#new as HTML
+  Rendering batters/new.html.erb within layouts/application
+  Rendered batters/new.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 31ms (Views: 29.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/batters/new" for ::1 at 2020-12-14 11:29:06 -0800
+Processing by BattersController#new as HTML
+  Rendering batters/new.html.erb within layouts/application
+  Rendered batters/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 25ms (Views: 23.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/batters/new" for ::1 at 2020-12-14 11:29:21 -0800
+Processing by BattersController#new as HTML
+  Rendering batters/new.html.erb within layouts/application
+  Rendered batters/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 31ms (Views: 27.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/batters/new" for ::1 at 2020-12-14 11:29:30 -0800
+Processing by BattersController#new as HTML
+  Rendering batters/new.html.erb within layouts/application
+  Rendered batters/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 28ms (Views: 27.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/batters" for ::1 at 2020-12-14 11:29:48 -0800
+Processing by BattersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/AU+QQeqlY8uzXrw+8gs6svCraMpb6OOTBDxwLewQevUUAvssnCyil6xL7jszTKqqLby7y3qHXYaB4fsI3i/dA==", "batter"=>{"name"=>"Mike Trout", "tier"=>"1"}, "commit"=>"Create Batter"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "batters" ("name", "tier", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Mike Trout"], ["tier", 1], ["created_at", "2020-12-14 19:29:48.040642"], ["updated_at", "2020-12-14 19:29:48.040642"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/batters/1
+Completed 302 Found in 5ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/batters/1" for ::1 at 2020-12-14 11:29:48 -0800
+Processing by BattersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBatter Load (0.1ms)[0m  [1m[34mSELECT  "batters".* FROM "batters" WHERE "batters"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering batters/show.html.erb within layouts/application
+  Rendered batters/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 27ms (Views: 23.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/batters" for ::1 at 2020-12-14 11:29:54 -0800
+Processing by BattersController#index as HTML
+  Rendering batters/index.html.erb within layouts/application
+  [1m[36mBatter Load (0.3ms)[0m  [1m[34mSELECT "batters".* FROM "batters"[0m
+  Rendered batters/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 31ms (Views: 28.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/batters/1" for ::1 at 2020-12-14 11:29:57 -0800
+Processing by BattersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBatter Load (0.2ms)[0m  [1m[34mSELECT  "batters".* FROM "batters" WHERE "batters"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering batters/show.html.erb within layouts/application
+  Rendered batters/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 28ms (Views: 25.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/batters" for ::1 at 2020-12-14 11:29:58 -0800
+Processing by BattersController#index as HTML
+  Rendering batters/index.html.erb within layouts/application
+  [1m[36mBatter Load (0.2ms)[0m  [1m[34mSELECT "batters".* FROM "batters"[0m
+  Rendered batters/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 27ms (Views: 25.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/batters/new" for ::1 at 2020-12-14 11:30:09 -0800
+Processing by BattersController#new as HTML
+  Rendering batters/new.html.erb within layouts/application
+  Rendered batters/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 29ms (Views: 27.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/batters" for ::1 at 2020-12-14 11:30:21 -0800
+Processing by BattersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jzsxP6eCWOy7uG7z6Xm0nwrr7bm/k7J+ckCX2qlIEJmnbgSSElh/6cvEO7v+fKrfaZ+y9bsWDIYkV+H2PYDuBg==", "batter"=>{"name"=>"Nelson Cruz", "tier"=>"1"}, "commit"=>"Create Batter"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "batters" ("name", "tier", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Nelson Cruz"], ["tier", 1], ["created_at", "2020-12-14 19:30:21.348364"], ["updated_at", "2020-12-14 19:30:21.348364"]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/batters/2
+Completed 302 Found in 6ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/batters/2" for ::1 at 2020-12-14 11:30:21 -0800
+Processing by BattersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBatter Load (0.4ms)[0m  [1m[34mSELECT  "batters".* FROM "batters" WHERE "batters"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering batters/show.html.erb within layouts/application
+  Rendered batters/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 30ms (Views: 26.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/batters" for ::1 at 2020-12-14 11:30:23 -0800
+Processing by BattersController#index as HTML
+  Rendering batters/index.html.erb within layouts/application
+  [1m[36mBatter Load (0.2ms)[0m  [1m[34mSELECT "batters".* FROM "batters"[0m
+  Rendered batters/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 29ms (Views: 27.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/batters" for ::1 at 2020-12-14 11:30:35 -0800
+Processing by BattersController#index as HTML
+  Rendering batters/index.html.erb within layouts/application
+  [1m[36mBatter Load (0.3ms)[0m  [1m[34mSELECT "batters".* FROM "batters"[0m
+  Rendered batters/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 25ms (Views: 22.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/batters" for ::1 at 2020-12-14 11:30:55 -0800
+Processing by BattersController#index as HTML
+  Rendering batters/index.html.erb within layouts/application
+  [1m[36mBatter Load (0.2ms)[0m  [1m[34mSELECT "batters".* FROM "batters"[0m
+  Rendered batters/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 23ms (Views: 22.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/batterss" for ::1 at 2020-12-14 11:31:35 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/batterss"):
+  
+actionpack (5.0.7.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.7.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.7.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.7.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.7.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.7.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.7.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.7.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.0.7.2) lib/rails/engine.rb:522:in `call'
+rack (2.2.3) lib/rack/handler/webrick.rb:95:in `service'
+/Users/davidwisecarver/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+/Users/davidwisecarver/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+/Users/davidwisecarver/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered collection of /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [21 times] (8.4ms)
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.6ms)
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (38.2ms)
+Started GET "/batters" for ::1 at 2020-12-14 11:32:22 -0800
+Processing by BattersController#index as HTML
+  Rendering batters/index.html.erb within layouts/application
+  [1m[36mBatter Load (0.1ms)[0m  [1m[34mSELECT "batters".* FROM "batters"[0m
+  Rendered batters/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 25ms (Views: 23.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/batters/new" for ::1 at 2020-12-14 11:32:25 -0800
+Processing by BattersController#new as HTML
+  Rendering batters/new.html.erb within layouts/application
+  Rendered batters/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 29ms (Views: 26.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/batters" for ::1 at 2020-12-14 11:32:44 -0800
+Processing by BattersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dI5sYOLoW3nj2OSHOA1U1BAk+m1kSOjlm6na7iaj5wJc21nNVzJ8fJOksc8vCEqUc1ClIWDNVh3NvqzCsmsZnQ==", "batter"=>{"name"=>"Frank Thomas", "tier"=>"2"}, "commit"=>"Create Batter"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "batters" ("name", "tier", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Frank Thomas"], ["tier", 2], ["created_at", "2020-12-14 19:32:44.725640"], ["updated_at", "2020-12-14 19:32:44.725640"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/batters/3
+Completed 302 Found in 3ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/batters/3" for ::1 at 2020-12-14 11:32:44 -0800
+Processing by BattersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBatter Load (0.2ms)[0m  [1m[34mSELECT  "batters".* FROM "batters" WHERE "batters"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering batters/show.html.erb within layouts/application
+  Rendered batters/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 21ms (Views: 19.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/batters/3/edit" for ::1 at 2020-12-14 11:32:47 -0800
+Processing by BattersController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBatter Load (0.2ms)[0m  [1m[34mSELECT  "batters".* FROM "batters" WHERE "batters"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering batters/edit.html.erb within layouts/application
+  Rendered batters/edit.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 29ms (Views: 26.1ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/batters/3" for ::1 at 2020-12-14 11:32:51 -0800
+Processing by BattersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZucdqGhQHfz2gIQXYUrfl/oqEnYXrqthSqGzrW836JFOsigF3Yo6+Yb80V92T8HXmV5NOhMrFZkctsWB+/8WDg==", "batter"=>{"name"=>"Frank Thomas", "tier"=>"2"}, "commit"=>"Update Batter", "id"=>"3"}
+  [1m[36mBatter Load (0.3ms)[0m  [1m[34mSELECT  "batters".* FROM "batters" WHERE "batters"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/batters/3
+Completed 302 Found in 5ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/batters/3" for ::1 at 2020-12-14 11:32:51 -0800
+Processing by BattersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBatter Load (0.1ms)[0m  [1m[34mSELECT  "batters".* FROM "batters" WHERE "batters"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering batters/show.html.erb within layouts/application
+  Rendered batters/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 24ms (Views: 21.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/batters" for ::1 at 2020-12-14 11:32:52 -0800
+Processing by BattersController#index as HTML
+  Rendering batters/index.html.erb within layouts/application
+  [1m[36mBatter Load (0.2ms)[0m  [1m[34mSELECT "batters".* FROM "batters"[0m
+  Rendered batters/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 28ms (Views: 25.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/pitchers" for ::1 at 2020-12-14 11:37:27 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/pitchers"):
+  
+actionpack (5.0.7.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.7.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.7.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.7.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.7.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.7.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.7.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.7.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.0.7.2) lib/rails/engine.rb:522:in `call'
+rack (2.2.3) lib/rack/handler/webrick.rb:95:in `service'
+/Users/davidwisecarver/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+/Users/davidwisecarver/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+/Users/davidwisecarver/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered collection of /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [21 times] (6.5ms)
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.0ms)
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (35.3ms)
+Started GET "/pitchers/new" for ::1 at 2020-12-14 11:37:34 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/pitchers/new"):
+  
+actionpack (5.0.7.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.7.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.7.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.7.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.7.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.7.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.7.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.7.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.0.7.2) lib/rails/engine.rb:522:in `call'
+rack (2.2.3) lib/rack/handler/webrick.rb:95:in `service'
+/Users/davidwisecarver/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+/Users/davidwisecarver/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+/Users/davidwisecarver/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered collection of /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [21 times] (7.0ms)
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.9ms)
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (35.9ms)
+Started GET "/pitcher/new" for ::1 at 2020-12-14 11:37:44 -0800
+  
+ActionController::RoutingError (uninitialized constant PitcherController):
+  
+activesupport (5.0.7.2) lib/active_support/inflector/methods.rb:268:in `const_get'
+activesupport (5.0.7.2) lib/active_support/inflector/methods.rb:268:in `block in constantize'
+activesupport (5.0.7.2) lib/active_support/inflector/methods.rb:266:in `each'
+activesupport (5.0.7.2) lib/active_support/inflector/methods.rb:266:in `inject'
+activesupport (5.0.7.2) lib/active_support/inflector/methods.rb:266:in `constantize'
+actionpack (5.0.7.2) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (5.0.7.2) lib/action_dispatch/routing/route_set.rb:44:in `controller'
+actionpack (5.0.7.2) lib/action_dispatch/routing/route_set.rb:30:in `serve'
+actionpack (5.0.7.2) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.7.2) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.7.2) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.7.2) lib/action_dispatch/routing/route_set.rb:727:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.7.2) lib/active_record/migration.rb:553:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.7.2) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.7.2) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.7.2) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.7.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.7.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.7.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.7.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.7.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.7.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.7.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.0.7.2) lib/rails/engine.rb:522:in `call'
+rack (2.2.3) lib/rack/handler/webrick.rb:95:in `service'
+/Users/davidwisecarver/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+/Users/davidwisecarver/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+/Users/davidwisecarver/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered collection of /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [21 times] (6.6ms)
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (33.4ms)
+Started GET "/pitchers/new" for ::1 at 2020-12-14 11:38:28 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/pitchers/new"):
+  
+actionpack (5.0.7.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.7.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.7.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.7.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.7.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.7.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.7.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.7.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.0.7.2) lib/rails/engine.rb:522:in `call'
+rack (2.2.3) lib/rack/handler/webrick.rb:95:in `service'
+/Users/davidwisecarver/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+/Users/davidwisecarver/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+/Users/davidwisecarver/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered collection of /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [21 times] (7.4ms)
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.7ms)
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (35.3ms)
+Started GET "/pitcher/new" for ::1 at 2020-12-14 11:38:44 -0800
+  
+ActionController::RoutingError (uninitialized constant PitcherController):
+  
+activesupport (5.0.7.2) lib/active_support/inflector/methods.rb:268:in `const_get'
+activesupport (5.0.7.2) lib/active_support/inflector/methods.rb:268:in `block in constantize'
+activesupport (5.0.7.2) lib/active_support/inflector/methods.rb:266:in `each'
+activesupport (5.0.7.2) lib/active_support/inflector/methods.rb:266:in `inject'
+activesupport (5.0.7.2) lib/active_support/inflector/methods.rb:266:in `constantize'
+actionpack (5.0.7.2) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (5.0.7.2) lib/action_dispatch/routing/route_set.rb:44:in `controller'
+actionpack (5.0.7.2) lib/action_dispatch/routing/route_set.rb:30:in `serve'
+actionpack (5.0.7.2) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.7.2) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.7.2) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.7.2) lib/action_dispatch/routing/route_set.rb:727:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.7.2) lib/active_record/migration.rb:553:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.7.2) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.7.2) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.7.2) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.7.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.7.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.7.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.7.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.7.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.7.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.7.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.0.7.2) lib/rails/engine.rb:522:in `call'
+rack (2.2.3) lib/rack/handler/webrick.rb:95:in `service'
+/Users/davidwisecarver/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+/Users/davidwisecarver/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+/Users/davidwisecarver/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered collection of /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [21 times] (6.0ms)
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.5ms)
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (30.9ms)
+Started GET "/pitcher/new" for ::1 at 2020-12-14 11:39:53 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/pitcher/new"):
+  
+actionpack (5.0.7.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.7.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.7.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.7.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.7.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.7.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.7.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.7.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.0.7.2) lib/rails/engine.rb:522:in `call'
+rack (2.2.3) lib/rack/handler/webrick.rb:95:in `service'
+/Users/davidwisecarver/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+/Users/davidwisecarver/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+/Users/davidwisecarver/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered collection of /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [21 times] (6.4ms)
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (35.9ms)
+Started GET "/pitchers/new" for ::1 at 2020-12-14 11:40:03 -0800
+Processing by PitchersController#new as HTML
+  Rendering pitchers/new.html.erb within layouts/application
+  Rendered pitchers/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 32ms (Views: 21.4ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/pitchers" for ::1 at 2020-12-14 11:40:14 -0800
+Processing by PitchersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PcRBFFZEeZAcHpLSIEF8FGsfAitkwen0bv08+W/P7dEVkXS5455elWxix5o3RGJUCGtdZ2BEVww46krV+wcTTg==", "pitcher"=>{"name"=>"Rick Honeycutt", "tier"=>"3"}, "commit"=>"Create Pitcher"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "pitchers" ("name", "tier", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Rick Honeycutt"], ["tier", 3], ["created_at", "2020-12-14 19:40:14.450648"], ["updated_at", "2020-12-14 19:40:14.450648"]]
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/pitchers/1
+Completed 302 Found in 7ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/pitchers/1" for ::1 at 2020-12-14 11:40:14 -0800
+Processing by PitchersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPitcher Load (0.2ms)[0m  [1m[34mSELECT  "pitchers".* FROM "pitchers" WHERE "pitchers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering pitchers/show.html.erb within layouts/application
+  Rendered pitchers/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 25ms (Views: 22.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/pitchers" for ::1 at 2020-12-14 11:40:18 -0800
+Processing by PitchersController#index as HTML
+  Rendering pitchers/index.html.erb within layouts/application
+  [1m[36mPitcher Load (0.2ms)[0m  [1m[34mSELECT "pitchers".* FROM "pitchers"[0m
+  Rendered pitchers/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 27ms (Views: 24.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/pitchers/new" for ::1 at 2020-12-14 11:40:21 -0800
+Processing by PitchersController#new as HTML
+  Rendering pitchers/new.html.erb within layouts/application
+  Rendered pitchers/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 28ms (Views: 26.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/pitchers" for ::1 at 2020-12-14 11:40:35 -0800
+Processing by PitchersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gIoDT/GgGgRkFFlt2vmsYCTU2KHZAK4OmpGOtLDvD8Ko3zbiRHo9ARRoDCXN/LIgR6CH7d2FEPbMhviYJCfxXQ==", "pitcher"=>{"name"=>"Mark Langston", "tier"=>"2"}, "commit"=>"Create Pitcher"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "pitchers" ("name", "tier", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Mark Langston"], ["tier", 2], ["created_at", "2020-12-14 19:40:35.471595"], ["updated_at", "2020-12-14 19:40:35.471595"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/pitchers/2
+Completed 302 Found in 4ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/pitchers/2" for ::1 at 2020-12-14 11:40:35 -0800
+Processing by PitchersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPitcher Load (0.2ms)[0m  [1m[34mSELECT  "pitchers".* FROM "pitchers" WHERE "pitchers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering pitchers/show.html.erb within layouts/application
+  Rendered pitchers/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 23ms (Views: 20.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/pitchers" for ::1 at 2020-12-14 11:40:37 -0800
+Processing by PitchersController#index as HTML
+  Rendering pitchers/index.html.erb within layouts/application
+  [1m[36mPitcher Load (0.2ms)[0m  [1m[34mSELECT "pitchers".* FROM "pitchers"[0m
+  Rendered pitchers/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 29ms (Views: 26.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/pitchers/new" for ::1 at 2020-12-14 11:40:40 -0800
+Processing by PitchersController#new as HTML
+  Rendering pitchers/new.html.erb within layouts/application
+  Rendered pitchers/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 46ms (Views: 43.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/pitchers" for ::1 at 2020-12-14 11:40:59 -0800
+Processing by PitchersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"INEX47kO0A44CSlTwSmZwnefasmbi5MLHER8KjLwVd8IhCJODNT3C0h1fBvWLIeCFOs1hZ8OLfNKUwoGpjirQA==", "pitcher"=>{"name"=>"Bob Wolcott", "tier"=>"4"}, "commit"=>"Create Pitcher"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "pitchers" ("name", "tier", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Bob Wolcott"], ["tier", 4], ["created_at", "2020-12-14 19:40:59.022829"], ["updated_at", "2020-12-14 19:40:59.022829"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/pitchers/3
+Completed 302 Found in 5ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/pitchers/3" for ::1 at 2020-12-14 11:40:59 -0800
+Processing by PitchersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPitcher Load (0.1ms)[0m  [1m[34mSELECT  "pitchers".* FROM "pitchers" WHERE "pitchers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering pitchers/show.html.erb within layouts/application
+  Rendered pitchers/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 29ms (Views: 26.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/pitchers" for ::1 at 2020-12-14 11:41:02 -0800
+Processing by PitchersController#index as HTML
+  Rendering pitchers/index.html.erb within layouts/application
+  [1m[36mPitcher Load (0.3ms)[0m  [1m[34mSELECT "pitchers".* FROM "pitchers"[0m
+  Rendered pitchers/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 33ms (Views: 30.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/plate_appearnaces/new" for ::1 at 2020-12-14 11:41:14 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/plate_appearnaces/new"):
+  
+actionpack (5.0.7.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.7.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.7.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.7.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.7.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.7.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.7.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.7.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.0.7.2) lib/rails/engine.rb:522:in `call'
+rack (2.2.3) lib/rack/handler/webrick.rb:95:in `service'
+/Users/davidwisecarver/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+/Users/davidwisecarver/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+/Users/davidwisecarver/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered collection of /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [21 times] (9.0ms)
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.3ms)
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (38.1ms)
+Started GET "/plate_appearances/new" for ::1 at 2020-12-14 11:41:22 -0800
+Processing by PlateAppearancesController#new as HTML
+  Rendering plate_appearances/new.html.erb within layouts/application
+  Rendered plate_appearances/new.html.erb within layouts/application (11.4ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `batter_id' for #<PlateAppearance:0x00007fa00d0c9310>
+Did you mean?  batter
+               batter=):
+    1: <h1>Plate Appearance Simulator</h1>
+    2: <%= form_for @plate_appearance do |f| %>
+    3:     <h3><%= f.label 'Batter:'%></h3>
+    4:     <%= f.collection_select(:batter_id, Batter.all, :id, :name) %>
+    5: 
+    6:     <h3><%= f.label 'Pitcher:'%></h3>
+    7:     <%= f.collection_select(:pitcher_id, Pitcher.all, :id, :name) %>
+  
+app/views/plate_appearances/new.html.erb:4:in `block in _app_views_plate_appearances_new_html_erb___2556136714788364712_70162753921940'
+app/views/plate_appearances/new.html.erb:2:in `_app_views_plate_appearances_new_html_erb___2556136714788364712_70162753921940'
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.8ms)
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (19.1ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreatePlateAppearances (20201214191518)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE "plate_appearances"[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20201214191518"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateBatters (20201214191436)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "batters" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "tier" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201214191436"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreatePitchers (20201214191457)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "pitchers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "tier" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201214191457"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreatePlateAppearances (20201214191518)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "plate_appearances" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "batter_id" integer, "pitcher_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201214191518"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-12-14 19:45:54.018875"], ["updated_at", "2020-12-14 19:45:54.018875"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/plate_appearances/new" for ::1 at 2020-12-14 11:46:20 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PlateAppearancesController#new as HTML
+  Rendering plate_appearances/new.html.erb within layouts/application
+  [1m[36mBatter Load (0.2ms)[0m  [1m[34mSELECT "batters".* FROM "batters"[0m
+  [1m[36mPitcher Load (0.2ms)[0m  [1m[34mSELECT "pitchers".* FROM "pitchers"[0m
+  Rendered plate_appearances/new.html.erb within layouts/application (27.7ms)
+Completed 200 OK in 303ms (Views: 282.7ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/plate_appearances" for ::1 at 2020-12-14 11:46:33 -0800
+Processing by PlateAppearancesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DEgGU4Kk76SGqELK88CusTmAEDyHD5jyrFTG0Xm4xV0kHTP+N37IofbUF4LkxbDxWvRPcIOKJgr6Q7D97XA7wg==", "commit"=>"Simulate At-Bat"}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: plate_appearance):
+  
+app/controllers/plate_appearances_controller.rb:33:in `plate_appearance_params'
+app/controllers/plate_appearances_controller.rb:19:in `create'
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.6ms)
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (31.7ms)
+Started GET "/batters/new" for ::1 at 2020-12-14 11:48:26 -0800
+Processing by BattersController#new as HTML
+  Rendering batters/new.html.erb within layouts/application
+  Rendered batters/new.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 30ms (Views: 25.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/batters" for ::1 at 2020-12-14 11:48:32 -0800
+Processing by BattersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"v2fDnOWRfAJM3CmWraN4Omt2SJYLfc4T+XcxGsGSGIKXMvYxUEtbBzygfN66pmZ6CAIX2g/4cOuvYEc2VVrmHQ==", "batter"=>{"name"=>"Mike Trout", "tier"=>"1"}, "commit"=>"Create Batter"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "batters" ("name", "tier", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Mike Trout"], ["tier", 1], ["created_at", "2020-12-14 19:48:32.502522"], ["updated_at", "2020-12-14 19:48:32.502522"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/batters/1
+Completed 302 Found in 7ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/batters/1" for ::1 at 2020-12-14 11:48:32 -0800
+Processing by BattersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBatter Load (0.2ms)[0m  [1m[34mSELECT  "batters".* FROM "batters" WHERE "batters"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering batters/show.html.erb within layouts/application
+  Rendered batters/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 21ms (Views: 17.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/batters" for ::1 at 2020-12-14 11:48:35 -0800
+Processing by BattersController#index as HTML
+  Rendering batters/index.html.erb within layouts/application
+  [1m[36mBatter Load (0.2ms)[0m  [1m[34mSELECT "batters".* FROM "batters"[0m
+  Rendered batters/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 20ms (Views: 18.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/batters/new" for ::1 at 2020-12-14 11:48:39 -0800
+Processing by BattersController#new as HTML
+  Rendering batters/new.html.erb within layouts/application
+  Rendered batters/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 28ms (Views: 26.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/batters" for ::1 at 2020-12-14 11:48:43 -0800
+Processing by BattersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Uobv012oXWKFm/Ib5yoEA0XOtB1lQWj1yFXjbLSu3/9609p+6HJ6Z/Xnp1PwLxpDJrrrUWHE1g2eQpVAIGYhYA==", "batter"=>{"name"=>"Nelson Cruz", "tier"=>"1"}, "commit"=>"Create Batter"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "batters" ("name", "tier", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Nelson Cruz"], ["tier", 1], ["created_at", "2020-12-14 19:48:43.831644"], ["updated_at", "2020-12-14 19:48:43.831644"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/batters/2
+Completed 302 Found in 7ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/batters/2" for ::1 at 2020-12-14 11:48:43 -0800
+Processing by BattersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBatter Load (0.1ms)[0m  [1m[34mSELECT  "batters".* FROM "batters" WHERE "batters"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering batters/show.html.erb within layouts/application
+  Rendered batters/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 46ms (Views: 44.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/pitchers/new" for ::1 at 2020-12-14 11:48:51 -0800
+Processing by PitchersController#new as HTML
+  Rendering pitchers/new.html.erb within layouts/application
+  Rendered pitchers/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 26ms (Views: 20.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/pitchers" for ::1 at 2020-12-14 11:48:56 -0800
+Processing by PitchersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AOyJy1qFLwQgKxU9OW1dLEn7i3SmiFIbkOi+B0x+/lkoubxm718IAVBXQHUuaENsKo/UOKIN7OPG/8gr2LYAxg==", "pitcher"=>{"name"=>"Rick Honeycutt", "tier"=>"3"}, "commit"=>"Create Pitcher"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "pitchers" ("name", "tier", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Rick Honeycutt"], ["tier", 3], ["created_at", "2020-12-14 19:48:56.866841"], ["updated_at", "2020-12-14 19:48:56.866841"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/pitchers/1
+Completed 302 Found in 5ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/pitchers/1" for ::1 at 2020-12-14 11:48:56 -0800
+Processing by PitchersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPitcher Load (0.4ms)[0m  [1m[34mSELECT  "pitchers".* FROM "pitchers" WHERE "pitchers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering pitchers/show.html.erb within layouts/application
+  Rendered pitchers/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 23ms (Views: 19.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/pitchers" for ::1 at 2020-12-14 11:48:59 -0800
+Processing by PitchersController#index as HTML
+  Rendering pitchers/index.html.erb within layouts/application
+  [1m[36mPitcher Load (0.4ms)[0m  [1m[34mSELECT "pitchers".* FROM "pitchers"[0m
+  Rendered pitchers/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 25ms (Views: 23.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/pitchers/new" for ::1 at 2020-12-14 11:49:00 -0800
+Processing by PitchersController#new as HTML
+  Rendering pitchers/new.html.erb within layouts/application
+  Rendered pitchers/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 27ms (Views: 24.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/pitchers" for ::1 at 2020-12-14 11:49:05 -0800
+Processing by PitchersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BiU8GjjO+RodbyE7o2JVHUdnhOFMPTTTRLpElqLOE2wucAm3jRTeH20TdHO0Z0tdJBPbrUi4iisSrTK6Ngbt8w==", "pitcher"=>{"name"=>"Mark Langston", "tier"=>"2"}, "commit"=>"Create Pitcher"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "pitchers" ("name", "tier", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Mark Langston"], ["tier", 2], ["created_at", "2020-12-14 19:49:05.713181"], ["updated_at", "2020-12-14 19:49:05.713181"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/pitchers/2
+Completed 302 Found in 5ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/pitchers/2" for ::1 at 2020-12-14 11:49:05 -0800
+Processing by PitchersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPitcher Load (0.2ms)[0m  [1m[34mSELECT  "pitchers".* FROM "pitchers" WHERE "pitchers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering pitchers/show.html.erb within layouts/application
+  Rendered pitchers/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 36ms (Views: 33.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/plate_appearances/new" for ::1 at 2020-12-14 11:49:11 -0800
+Processing by PlateAppearancesController#new as HTML
+  Rendering plate_appearances/new.html.erb within layouts/application
+  [1m[36mBatter Load (0.1ms)[0m  [1m[34mSELECT "batters".* FROM "batters"[0m
+  [1m[36mPitcher Load (0.2ms)[0m  [1m[34mSELECT "pitchers".* FROM "pitchers"[0m
+  Rendered plate_appearances/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 32ms (Views: 29.6ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/plate_appearances" for ::1 at 2020-12-14 11:49:19 -0800
+Processing by PlateAppearancesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ch0xsYk3B2sf538XhGXQhdhRpy5BTghNEHnXUbKJhUwiSAQcPO0gbm+bKl+TYM7FuyX4YkXLtrVGbqF9JkF70w==", "plate_appearance"=>{"batter_id"=>"2", "pitcher_id"=>"2"}, "commit"=>"Simulate At-Bat"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "plate_appearances" ("batter_id", "pitcher_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["batter_id", 2], ["pitcher_id", 2], ["created_at", "2020-12-14 19:49:19.441774"], ["updated_at", "2020-12-14 19:49:19.441774"]]
+  [1m[35m (6.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/batters/1
+Completed 302 Found in 9ms (ActiveRecord: 6.4ms)
+
+
+Started GET "/batters/1" for ::1 at 2020-12-14 11:49:19 -0800
+Processing by BattersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBatter Load (0.1ms)[0m  [1m[34mSELECT  "batters".* FROM "batters" WHERE "batters"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering batters/show.html.erb within layouts/application
+  Rendered batters/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 24ms (Views: 22.1ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/plate_appearances" for ::1 at 2020-12-14 11:51:29 -0800
+Processing by PlateAppearancesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ch0xsYk3B2sf538XhGXQhdhRpy5BTghNEHnXUbKJhUwiSAQcPO0gbm+bKl+TYM7FuyX4YkXLtrVGbqF9JkF70w==", "plate_appearance"=>{"batter_id"=>"2", "pitcher_id"=>"2"}, "commit"=>"Simulate At-Bat"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "plate_appearances" ("batter_id", "pitcher_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["batter_id", 2], ["pitcher_id", 2], ["created_at", "2020-12-14 19:51:29.323765"], ["updated_at", "2020-12-14 19:51:29.323765"]]
+  [1m[35m (6.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/batters/2
+Completed 302 Found in 9ms (ActiveRecord: 6.3ms)
+
+
+Started GET "/batters/2" for ::1 at 2020-12-14 11:51:29 -0800
+Processing by BattersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBatter Load (0.1ms)[0m  [1m[34mSELECT  "batters".* FROM "batters" WHERE "batters"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering batters/show.html.erb within layouts/application
+  Rendered batters/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 26ms (Views: 23.8ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/plate_appearances" for ::1 at 2020-12-14 11:51:34 -0800
+Processing by PlateAppearancesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ch0xsYk3B2sf538XhGXQhdhRpy5BTghNEHnXUbKJhUwiSAQcPO0gbm+bKl+TYM7FuyX4YkXLtrVGbqF9JkF70w==", "plate_appearance"=>{"batter_id"=>"2", "pitcher_id"=>"2"}, "commit"=>"Simulate At-Bat"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "plate_appearances" ("batter_id", "pitcher_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["batter_id", 2], ["pitcher_id", 2], ["created_at", "2020-12-14 19:51:34.930900"], ["updated_at", "2020-12-14 19:51:34.930900"]]
+  [1m[35m (6.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/batters/3
+Completed 302 Found in 9ms (ActiveRecord: 6.6ms)
+
+
+Started GET "/batters/3" for ::1 at 2020-12-14 11:51:34 -0800
+Processing by BattersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBatter Load (0.2ms)[0m  [1m[34mSELECT  "batters".* FROM "batters" WHERE "batters"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Batter with 'id'=3):
+  
+app/controllers/batters_controller.rb:7:in `show'
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.3ms)
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (16.0ms)
+Started GET "/plate_appearances/1" for ::1 at 2020-12-14 11:52:34 -0800
+Processing by PlateAppearancesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlateAppearance Load (0.2ms)[0m  [1m[34mSELECT  "plate_appearances".* FROM "plate_appearances" WHERE "plate_appearances"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering plate_appearances/show.html.erb within layouts/application
+  [1m[36mBatter Load (0.1ms)[0m  [1m[34mSELECT  "batters".* FROM "batters" WHERE "batters"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPitcher Load (0.1ms)[0m  [1m[34mSELECT  "pitchers".* FROM "pitchers" WHERE "pitchers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered plate_appearances/show.html.erb within layouts/application (25.5ms)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `outcome' for #<PlateAppearance:0x00007ff77ddc4840>):
+    1: <h1>Outcome:</h1>
+    2: <p><%= @plate_appearance.batter.name %> vs. <%= @plate_appearance.pitcher.name%>: <%= @plate_appearance.outcome%>.</p>
+    3:  
+  
+app/views/plate_appearances/show.html.erb:2:in `_app_views_plate_appearances_show_html_erb__4437891619321667773_70350472638360'
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.5ms)
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (22.7ms)
+Started GET "/plate_appearances/1" for ::1 at 2020-12-14 11:54:12 -0800
+Processing by PlateAppearancesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlateAppearance Load (0.3ms)[0m  [1m[34mSELECT  "plate_appearances".* FROM "plate_appearances" WHERE "plate_appearances"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 1.1ms)
+
+
+  
+NoMethodError (undefined method `outcome' for #<PlateAppearance:0x00007ff77bfd49c0>):
+  
+app/controllers/plate_appearances_controller.rb:8:in `show'
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.3ms)
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (18.6ms)
+Started GET "/plate_appearances/1" for ::1 at 2020-12-14 13:27:37 -0800
+Processing by PlateAppearancesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlateAppearance Load (0.1ms)[0m  [1m[34mSELECT  "plate_appearances".* FROM "plate_appearances" WHERE "plate_appearances"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering plate_appearances/show.html.erb within layouts/application
+  [1m[36mBatter Load (0.3ms)[0m  [1m[34mSELECT  "batters".* FROM "batters" WHERE "batters"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPitcher Load (0.1ms)[0m  [1m[34mSELECT  "pitchers".* FROM "pitchers" WHERE "pitchers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered plate_appearances/show.html.erb within layouts/application (19.6ms)
+Completed 200 OK in 78ms (Views: 43.7ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/plate_appearances/1" for ::1 at 2020-12-14 13:29:03 -0800
+Processing by PlateAppearancesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlateAppearance Load (0.1ms)[0m  [1m[34mSELECT  "plate_appearances".* FROM "plate_appearances" WHERE "plate_appearances"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering plate_appearances/show.html.erb within layouts/application
+  [1m[36mBatter Load (0.1ms)[0m  [1m[34mSELECT  "batters".* FROM "batters" WHERE "batters"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPitcher Load (0.2ms)[0m  [1m[34mSELECT  "pitchers".* FROM "pitchers" WHERE "pitchers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered plate_appearances/show.html.erb within layouts/application (18.4ms)
+Completed 200 OK in 45ms (Views: 32.6ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/plate_appearances/1" for ::1 at 2020-12-14 13:29:06 -0800
+Processing by PlateAppearancesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlateAppearance Load (0.1ms)[0m  [1m[34mSELECT  "plate_appearances".* FROM "plate_appearances" WHERE "plate_appearances"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering plate_appearances/show.html.erb within layouts/application
+  [1m[36mBatter Load (0.1ms)[0m  [1m[34mSELECT  "batters".* FROM "batters" WHERE "batters"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPitcher Load (0.2ms)[0m  [1m[34mSELECT  "pitchers".* FROM "pitchers" WHERE "pitchers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered plate_appearances/show.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 23ms (Views: 21.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/plate_appearances/1" for ::1 at 2020-12-14 13:29:07 -0800
+Processing by PlateAppearancesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlateAppearance Load (0.1ms)[0m  [1m[34mSELECT  "plate_appearances".* FROM "plate_appearances" WHERE "plate_appearances"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering plate_appearances/show.html.erb within layouts/application
+  [1m[36mBatter Load (0.2ms)[0m  [1m[34mSELECT  "batters".* FROM "batters" WHERE "batters"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPitcher Load (0.2ms)[0m  [1m[34mSELECT  "pitchers".* FROM "pitchers" WHERE "pitchers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered plate_appearances/show.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 22ms (Views: 19.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/plate_appearances/1" for ::1 at 2020-12-14 13:29:08 -0800
+Processing by PlateAppearancesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlateAppearance Load (0.1ms)[0m  [1m[34mSELECT  "plate_appearances".* FROM "plate_appearances" WHERE "plate_appearances"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering plate_appearances/show.html.erb within layouts/application
+  [1m[36mBatter Load (0.3ms)[0m  [1m[34mSELECT  "batters".* FROM "batters" WHERE "batters"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPitcher Load (0.1ms)[0m  [1m[34mSELECT  "pitchers".* FROM "pitchers" WHERE "pitchers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered plate_appearances/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 26ms (Views: 23.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/plate_appearances/1" for ::1 at 2020-12-14 13:29:09 -0800
+Processing by PlateAppearancesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlateAppearance Load (0.1ms)[0m  [1m[34mSELECT  "plate_appearances".* FROM "plate_appearances" WHERE "plate_appearances"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering plate_appearances/show.html.erb within layouts/application
+  [1m[36mBatter Load (0.1ms)[0m  [1m[34mSELECT  "batters".* FROM "batters" WHERE "batters"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPitcher Load (0.2ms)[0m  [1m[34mSELECT  "pitchers".* FROM "pitchers" WHERE "pitchers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered plate_appearances/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 25ms (Views: 23.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/plate_appearances/1" for ::1 at 2020-12-14 13:29:10 -0800
+Processing by PlateAppearancesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlateAppearance Load (0.2ms)[0m  [1m[34mSELECT  "plate_appearances".* FROM "plate_appearances" WHERE "plate_appearances"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering plate_appearances/show.html.erb within layouts/application
+  [1m[36mBatter Load (0.1ms)[0m  [1m[34mSELECT  "batters".* FROM "batters" WHERE "batters"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPitcher Load (0.1ms)[0m  [1m[34mSELECT  "pitchers".* FROM "pitchers" WHERE "pitchers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered plate_appearances/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 23ms (Views: 20.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/plate_appearances/1" for ::1 at 2020-12-14 13:29:11 -0800
+Processing by PlateAppearancesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlateAppearance Load (0.1ms)[0m  [1m[34mSELECT  "plate_appearances".* FROM "plate_appearances" WHERE "plate_appearances"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering plate_appearances/show.html.erb within layouts/application
+  [1m[36mBatter Load (0.1ms)[0m  [1m[34mSELECT  "batters".* FROM "batters" WHERE "batters"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPitcher Load (0.2ms)[0m  [1m[34mSELECT  "pitchers".* FROM "pitchers" WHERE "pitchers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered plate_appearances/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 23ms (Views: 21.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/plate_appearances/1" for ::1 at 2020-12-14 13:29:12 -0800
+Processing by PlateAppearancesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlateAppearance Load (0.1ms)[0m  [1m[34mSELECT  "plate_appearances".* FROM "plate_appearances" WHERE "plate_appearances"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering plate_appearances/show.html.erb within layouts/application
+  [1m[36mBatter Load (0.2ms)[0m  [1m[34mSELECT  "batters".* FROM "batters" WHERE "batters"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPitcher Load (0.1ms)[0m  [1m[34mSELECT  "pitchers".* FROM "pitchers" WHERE "pitchers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered plate_appearances/show.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 22ms (Views: 20.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/plate_appearances/1" for ::1 at 2020-12-14 13:29:12 -0800
+Processing by PlateAppearancesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlateAppearance Load (0.2ms)[0m  [1m[34mSELECT  "plate_appearances".* FROM "plate_appearances" WHERE "plate_appearances"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering plate_appearances/show.html.erb within layouts/application
+  [1m[36mBatter Load (0.1ms)[0m  [1m[34mSELECT  "batters".* FROM "batters" WHERE "batters"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPitcher Load (0.1ms)[0m  [1m[34mSELECT  "pitchers".* FROM "pitchers" WHERE "pitchers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered plate_appearances/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 45ms (Views: 42.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/plate_appearances/1" for ::1 at 2020-12-14 13:29:13 -0800
+Processing by PlateAppearancesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlateAppearance Load (0.1ms)[0m  [1m[34mSELECT  "plate_appearances".* FROM "plate_appearances" WHERE "plate_appearances"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering plate_appearances/show.html.erb within layouts/application
+  [1m[36mBatter Load (0.1ms)[0m  [1m[34mSELECT  "batters".* FROM "batters" WHERE "batters"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPitcher Load (0.2ms)[0m  [1m[34mSELECT  "pitchers".* FROM "pitchers" WHERE "pitchers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered plate_appearances/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 24ms (Views: 22.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/plate_appearances/1" for ::1 at 2020-12-14 13:29:14 -0800
+Processing by PlateAppearancesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlateAppearance Load (0.1ms)[0m  [1m[34mSELECT  "plate_appearances".* FROM "plate_appearances" WHERE "plate_appearances"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering plate_appearances/show.html.erb within layouts/application
+  [1m[36mBatter Load (0.2ms)[0m  [1m[34mSELECT  "batters".* FROM "batters" WHERE "batters"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPitcher Load (0.1ms)[0m  [1m[34mSELECT  "pitchers".* FROM "pitchers" WHERE "pitchers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered plate_appearances/show.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 24ms (Views: 22.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/plate_appearances/1" for ::1 at 2020-12-14 13:29:16 -0800
+Processing by PlateAppearancesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlateAppearance Load (0.1ms)[0m  [1m[34mSELECT  "plate_appearances".* FROM "plate_appearances" WHERE "plate_appearances"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering plate_appearances/show.html.erb within layouts/application
+  [1m[36mBatter Load (0.1ms)[0m  [1m[34mSELECT  "batters".* FROM "batters" WHERE "batters"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPitcher Load (0.1ms)[0m  [1m[34mSELECT  "pitchers".* FROM "pitchers" WHERE "pitchers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered plate_appearances/show.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 24ms (Views: 21.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/plate_appearances/1" for ::1 at 2020-12-14 13:29:18 -0800
+Processing by PlateAppearancesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlateAppearance Load (0.1ms)[0m  [1m[34mSELECT  "plate_appearances".* FROM "plate_appearances" WHERE "plate_appearances"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering plate_appearances/show.html.erb within layouts/application
+  [1m[36mBatter Load (0.1ms)[0m  [1m[34mSELECT  "batters".* FROM "batters" WHERE "batters"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPitcher Load (0.1ms)[0m  [1m[34mSELECT  "pitchers".* FROM "pitchers" WHERE "pitchers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered plate_appearances/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 23ms (Views: 21.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/plate_appearances/1" for ::1 at 2020-12-14 13:33:42 -0800
+Processing by PlateAppearancesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlateAppearance Load (0.1ms)[0m  [1m[34mSELECT  "plate_appearances".* FROM "plate_appearances" WHERE "plate_appearances"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering plate_appearances/show.html.erb within layouts/application
+  Rendered plate_appearances/show.html.erb within layouts/application (0.4ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.1ms)
+
+
+  
+SyntaxError (/Users/davidwisecarver/Development/code/bonus-challenge-rails-mini-project/app/views/plate_appearances/show.html.erb:3: syntax error, unexpected tIVAR, expecting ')'
+...ances Between"@plate_appearance.batter " and " @plate_appear...
+...              ^~~~~~~~~~~~~~~~~
+/Users/davidwisecarver/Development/code/bonus-challenge-rails-mini-project/app/views/plate_appearances/show.html.erb:3: syntax error, unexpected tIVAR, expecting ')'
+...atter " and " @plate_appearance.pitcher, plate_appearances_p...
+...              ^~~~~~~~~~~~~~~~~
+/Users/davidwisecarver/Development/code/bonus-challenge-rails-mini-project/app/views/plate_appearances/show.html.erb:3: syntax error, unexpected ')', expecting '.' or &. or :: or '['
+...er, @plate_appearance.pitcher));@output_buffer.to_s
+...                              ^
+/Users/davidwisecarver/Development/code/bonus-challenge-rails-mini-project/app/views/plate_appearances/show.html.erb:4: syntax error, unexpected ensure, expecting ')'
+          ensure
+          ^~~~~~
+/Users/davidwisecarver/Development/code/bonus-challenge-rails-mini-project/app/views/plate_appearances/show.html.erb:6: syntax error, unexpected end, expecting ')'
+          end
+          ^~~):
+  
+app/views/plate_appearances/show.html.erb:3: syntax error, unexpected tIVAR, expecting ')'
+app/views/plate_appearances/show.html.erb:3: syntax error, unexpected tIVAR, expecting ')'
+app/views/plate_appearances/show.html.erb:3: syntax error, unexpected ')', expecting '.' or &. or :: or '['
+app/views/plate_appearances/show.html.erb:4: syntax error, unexpected ensure, expecting ')'
+app/views/plate_appearances/show.html.erb:6: syntax error, unexpected end, expecting ')'
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.9ms)
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (18.3ms)
+Started GET "/plate_appearances/1" for ::1 at 2020-12-14 13:34:03 -0800
+Processing by PlateAppearancesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlateAppearance Load (0.1ms)[0m  [1m[34mSELECT  "plate_appearances".* FROM "plate_appearances" WHERE "plate_appearances"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering plate_appearances/show.html.erb within layouts/application
+  Rendered plate_appearances/show.html.erb within layouts/application (0.4ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.1ms)
+
+
+  
+SyntaxError (/Users/davidwisecarver/Development/code/bonus-challenge-rails-mini-project/app/views/plate_appearances/show.html.erb:3: syntax error, unexpected tIVAR, expecting ')'
+...ances Between"@plate_appearance.batter " and " @plate_appear...
+...              ^~~~~~~~~~~~~~~~~
+/Users/davidwisecarver/Development/code/bonus-challenge-rails-mini-project/app/views/plate_appearances/show.html.erb:3: syntax error, unexpected tIVAR, expecting ')'
+...atter " and " @plate_appearance.pitcher, plate_appearances_p...
+...              ^~~~~~~~~~~~~~~~~
+/Users/davidwisecarver/Development/code/bonus-challenge-rails-mini-project/app/views/plate_appearances/show.html.erb:3: syntax error, unexpected ')', expecting '='
+...itcher, plate_appearances_path);@output_buffer.to_s
+...                              ^
+/Users/davidwisecarver/Development/code/bonus-challenge-rails-mini-project/app/views/plate_appearances/show.html.erb:4: syntax error, unexpected ensure, expecting ')'
+          ensure
+          ^~~~~~
+/Users/davidwisecarver/Development/code/bonus-challenge-rails-mini-project/app/views/plate_appearances/show.html.erb:6: syntax error, unexpected end, expecting ')'
+          end
+          ^~~):
+  
+app/views/plate_appearances/show.html.erb:3: syntax error, unexpected tIVAR, expecting ')'
+app/views/plate_appearances/show.html.erb:3: syntax error, unexpected tIVAR, expecting ')'
+app/views/plate_appearances/show.html.erb:3: syntax error, unexpected ')', expecting '='
+app/views/plate_appearances/show.html.erb:4: syntax error, unexpected ensure, expecting ')'
+app/views/plate_appearances/show.html.erb:6: syntax error, unexpected end, expecting ')'
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.7ms)
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (16.6ms)
+Started GET "/plate_appearances/1" for ::1 at 2020-12-14 13:34:29 -0800
+Processing by PlateAppearancesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlateAppearance Load (0.1ms)[0m  [1m[34mSELECT  "plate_appearances".* FROM "plate_appearances" WHERE "plate_appearances"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering plate_appearances/show.html.erb within layouts/application
+  Rendered plate_appearances/show.html.erb within layouts/application (0.4ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.1ms)
+
+
+  
+SyntaxError (/Users/davidwisecarver/Development/code/bonus-challenge-rails-mini-project/app/views/plate_appearances/show.html.erb:3: syntax error, unexpected tIDENTIFIER, expecting ')'
+...arances" plate_appearances_path);@output_buffer.to_s
+...         ^~~~~~~~~~~~~~~~~~~~~~):
+  
+app/views/plate_appearances/show.html.erb:3: syntax error, unexpected tIDENTIFIER, expecting ')'
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.2ms)
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (19.9ms)
+Started GET "/plate_appearances/1" for ::1 at 2020-12-14 13:34:42 -0800
+Processing by PlateAppearancesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlateAppearance Load (0.1ms)[0m  [1m[34mSELECT  "plate_appearances".* FROM "plate_appearances" WHERE "plate_appearances"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering plate_appearances/show.html.erb within layouts/application
+  Rendered plate_appearances/show.html.erb within layouts/application (0.5ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.1ms)
+
+
+  
+SyntaxError (/Users/davidwisecarver/Development/code/bonus-challenge-rails-mini-project/app/views/plate_appearances/show.html.erb:3: syntax error, unexpected tIVAR, expecting ')'
+...ances Between"@plate_appearance.batter " and " @plate_appear...
+...              ^~~~~~~~~~~~~~~~~
+/Users/davidwisecarver/Development/code/bonus-challenge-rails-mini-project/app/views/plate_appearances/show.html.erb:3: syntax error, unexpected tIVAR, expecting ')'
+...atter " and " @plate_appearance.pitcher, plate_appearances_p...
+...              ^~~~~~~~~~~~~~~~~
+/Users/davidwisecarver/Development/code/bonus-challenge-rails-mini-project/app/views/plate_appearances/show.html.erb:3: syntax error, unexpected ')', expecting '='
+...itcher, plate_appearances_path);@output_buffer.to_s
+...                              ^
+/Users/davidwisecarver/Development/code/bonus-challenge-rails-mini-project/app/views/plate_appearances/show.html.erb:4: syntax error, unexpected ensure, expecting ')'
+          ensure
+          ^~~~~~
+/Users/davidwisecarver/Development/code/bonus-challenge-rails-mini-project/app/views/plate_appearances/show.html.erb:6: syntax error, unexpected end, expecting ')'
+          end
+          ^~~):
+  
+app/views/plate_appearances/show.html.erb:3: syntax error, unexpected tIVAR, expecting ')'
+app/views/plate_appearances/show.html.erb:3: syntax error, unexpected tIVAR, expecting ')'
+app/views/plate_appearances/show.html.erb:3: syntax error, unexpected ')', expecting '='
+app/views/plate_appearances/show.html.erb:4: syntax error, unexpected ensure, expecting ')'
+app/views/plate_appearances/show.html.erb:6: syntax error, unexpected end, expecting ')'
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.2ms)
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (18.7ms)
+Started GET "/plate_appearances/1" for ::1 at 2020-12-14 13:35:59 -0800
+Processing by PlateAppearancesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlateAppearance Load (0.1ms)[0m  [1m[34mSELECT  "plate_appearances".* FROM "plate_appearances" WHERE "plate_appearances"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering plate_appearances/show.html.erb within layouts/application
+  Rendered plate_appearances/show.html.erb within layouts/application (0.4ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.1ms)
+
+
+  
+SyntaxError (/Users/davidwisecarver/Development/code/bonus-challenge-rails-mini-project/app/views/plate_appearances/show.html.erb:3: syntax error, unexpected tIVAR, expecting ')'
+...nces Between" @plate_appearance.batter @plate_appearance.pit...
+...              ^~~~~~~~~~~~~~~~~
+/Users/davidwisecarver/Development/code/bonus-challenge-rails-mini-project/app/views/plate_appearances/show.html.erb:3: syntax error, unexpected ')', expecting end
+...tcher), plate_appearances_path);@output_buffer.to_s
+...                              ^):
+  
+app/views/plate_appearances/show.html.erb:3: syntax error, unexpected tIVAR, expecting ')'
+app/views/plate_appearances/show.html.erb:3: syntax error, unexpected ')', expecting end
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.6ms)
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (21.8ms)
+Started GET "/plate_appearances/1" for ::1 at 2020-12-14 13:36:17 -0800
+Processing by PlateAppearancesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlateAppearance Load (0.2ms)[0m  [1m[34mSELECT  "plate_appearances".* FROM "plate_appearances" WHERE "plate_appearances"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering plate_appearances/show.html.erb within layouts/application
+  [1m[36mBatter Load (0.2ms)[0m  [1m[34mSELECT  "batters".* FROM "batters" WHERE "batters"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPitcher Load (0.1ms)[0m  [1m[34mSELECT  "pitchers".* FROM "pitchers" WHERE "pitchers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered plate_appearances/show.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 22ms (Views: 19.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/plate_appearances" for ::1 at 2020-12-14 13:36:20 -0800
+Processing by PlateAppearancesController#index as HTML
+  Rendering plate_appearances/index.html.erb within layouts/application
+  [1m[36mPlateAppearance Load (0.1ms)[0m  [1m[34mSELECT "plate_appearances".* FROM "plate_appearances"[0m
+  [1m[36mBatter Load (0.2ms)[0m  [1m[34mSELECT  "batters".* FROM "batters" WHERE "batters"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPitcher Load (0.1ms)[0m  [1m[34mSELECT  "pitchers".* FROM "pitchers" WHERE "pitchers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "batters".* FROM "batters" WHERE "batters"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "pitchers".* FROM "pitchers" WHERE "pitchers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "batters".* FROM "batters" WHERE "batters"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "pitchers".* FROM "pitchers" WHERE "pitchers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered plate_appearances/index.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 27ms (Views: 25.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/plate_appearances/new" for ::1 at 2020-12-14 13:37:05 -0800
+Processing by PlateAppearancesController#new as HTML
+  Rendering plate_appearances/new.html.erb within layouts/application
+  [1m[36mBatter Load (0.2ms)[0m  [1m[34mSELECT "batters".* FROM "batters"[0m
+  [1m[36mPitcher Load (0.2ms)[0m  [1m[34mSELECT "pitchers".* FROM "pitchers"[0m
+  Rendered plate_appearances/new.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 27ms (Views: 24.6ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/plate_appearances" for ::1 at 2020-12-14 13:37:10 -0800
+Processing by PlateAppearancesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"z2NPpS7Vs0MoMmVW7VIP82VKJbwHxEnFBBIg5lQF5ojnNnoImw+URlhOMB76VxGzBj568ANB9z1SBVbKwM0YFw==", "plate_appearance"=>{"batter_id"=>"1", "pitcher_id"=>"1"}, "commit"=>"Simulate At-Bat"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "plate_appearances" ("batter_id", "pitcher_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["batter_id", 1], ["pitcher_id", 1], ["created_at", "2020-12-14 21:37:10.342279"], ["updated_at", "2020-12-14 21:37:10.342279"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/batters/4
+Completed 302 Found in 4ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/batters/4" for ::1 at 2020-12-14 13:37:10 -0800
+Processing by BattersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mBatter Load (0.1ms)[0m  [1m[34mSELECT  "batters".* FROM "batters" WHERE "batters"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Batter with 'id'=4):
+  
+app/controllers/batters_controller.rb:7:in `show'
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.0ms)
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (18.0ms)
+Started POST "/plate_appearances" for ::1 at 2020-12-14 13:37:23 -0800
+Processing by PlateAppearancesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"z2NPpS7Vs0MoMmVW7VIP82VKJbwHxEnFBBIg5lQF5ojnNnoImw+URlhOMB76VxGzBj568ANB9z1SBVbKwM0YFw==", "plate_appearance"=>{"batter_id"=>"1", "pitcher_id"=>"1"}, "commit"=>"Simulate At-Bat"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "plate_appearances" ("batter_id", "pitcher_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["batter_id", 1], ["pitcher_id", 1], ["created_at", "2020-12-14 21:37:23.930102"], ["updated_at", "2020-12-14 21:37:23.930102"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/batters/5
+Completed 302 Found in 5ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/batters/5" for ::1 at 2020-12-14 13:37:23 -0800
+Processing by BattersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mBatter Load (0.2ms)[0m  [1m[34mSELECT  "batters".* FROM "batters" WHERE "batters"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Batter with 'id'=5):
+  
+app/controllers/batters_controller.rb:7:in `show'
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.6ms)
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (18.5ms)
+Started GET "/batters/new" for ::1 at 2020-12-14 13:53:17 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BattersController#new as HTML
+  Rendering batters/new.html.erb within layouts/application
+  Rendered batters/new.html.erb within layouts/application (22.1ms)
+Completed 200 OK in 293ms (Views: 273.8ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/batters" for ::1 at 2020-12-14 13:53:37 -0800
+Processing by BattersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xOkWVB0Ha9LiZSOykSNdkGcHpgEjkiHQMtwA4DLo9ZzsvCP5qN1M15IZdvqGJkPQBHP5TScXnyhky3bMpiALAw==", "batter"=>{"name"=>"Jake Marisnick", "tier"=>"3"}, "commit"=>"Create Batter"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "batters" ("name", "tier", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Jake Marisnick"], ["tier", 3], ["created_at", "2020-12-14 21:53:37.277887"], ["updated_at", "2020-12-14 21:53:37.277887"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/batters/3
+Completed 302 Found in 7ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/batters/3" for ::1 at 2020-12-14 13:53:37 -0800
+Processing by BattersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBatter Load (0.2ms)[0m  [1m[34mSELECT  "batters".* FROM "batters" WHERE "batters"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering batters/show.html.erb within layouts/application
+  Rendered batters/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 21ms (Views: 17.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/batters" for ::1 at 2020-12-14 13:53:40 -0800
+Processing by BattersController#index as HTML
+  Rendering batters/index.html.erb within layouts/application
+  [1m[36mBatter Load (0.1ms)[0m  [1m[34mSELECT "batters".* FROM "batters"[0m
+  Rendered batters/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 26ms (Views: 23.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/batters/new" for ::1 at 2020-12-14 13:53:44 -0800
+Processing by BattersController#new as HTML
+  Rendering batters/new.html.erb within layouts/application
+  Rendered batters/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 24ms (Views: 21.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/batters" for ::1 at 2020-12-14 13:53:55 -0800
+Processing by BattersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xtoNh3QGE6ZVlGyqFW5WwT0TPvEBJysy3yf+7Ws3P4Hujzgqwdw0oyXoOeICa0iBXmdhvQWilcqJMIjB///BHg==", "batter"=>{"name"=>"Dee Gordon", "tier"=>"4"}, "commit"=>"Create Batter"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "batters" ("name", "tier", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Dee Gordon"], ["tier", 4], ["created_at", "2020-12-14 21:53:55.854281"], ["updated_at", "2020-12-14 21:53:55.854281"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/batters/4
+Completed 302 Found in 5ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/batters/4" for ::1 at 2020-12-14 13:53:55 -0800
+Processing by BattersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mBatter Load (0.2ms)[0m  [1m[34mSELECT  "batters".* FROM "batters" WHERE "batters"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering batters/show.html.erb within layouts/application
+  Rendered batters/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 22ms (Views: 20.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/batters" for ::1 at 2020-12-14 13:53:58 -0800
+Processing by BattersController#index as HTML
+  Rendering batters/index.html.erb within layouts/application
+  [1m[36mBatter Load (0.3ms)[0m  [1m[34mSELECT "batters".* FROM "batters"[0m
+  Rendered batters/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 28ms (Views: 25.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/plate_appearances/new" for ::1 at 2020-12-14 13:54:04 -0800
+Processing by PlateAppearancesController#new as HTML
+  Rendering plate_appearances/new.html.erb within layouts/application
+  [1m[36mBatter Load (0.1ms)[0m  [1m[34mSELECT "batters".* FROM "batters"[0m
+  [1m[36mPitcher Load (0.1ms)[0m  [1m[34mSELECT "pitchers".* FROM "pitchers"[0m
+  Rendered plate_appearances/new.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 52ms (Views: 38.6ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/plate_appearances" for ::1 at 2020-12-14 13:54:10 -0800
+Processing by PlateAppearancesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"C8licHJp24nYkbplCmhdf8OrUlAmWgDBK0+bYOG+9EQjnFfdx7P8jKjt7y0dbUM/oN8NHCLfvjl9WO1MdXYK2w==", "plate_appearance"=>{"batter_id"=>"4", "pitcher_id"=>"2"}, "commit"=>"Simulate At-Bat"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "plate_appearances" ("batter_id", "pitcher_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["batter_id", 4], ["pitcher_id", 2], ["created_at", "2020-12-14 21:54:10.680071"], ["updated_at", "2020-12-14 21:54:10.680071"]]
+  [1m[35m (6.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/batters/6
+Completed 302 Found in 11ms (ActiveRecord: 6.9ms)
+
+
+Started GET "/batters/6" for ::1 at 2020-12-14 13:54:10 -0800
+Processing by BattersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mBatter Load (0.2ms)[0m  [1m[34mSELECT  "batters".* FROM "batters" WHERE "batters"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Batter with 'id'=6):
+  
+app/controllers/batters_controller.rb:7:in `show'
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.9ms)
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (20.8ms)
+Started GET "/batters/new" for ::1 at 2020-12-14 14:29:41 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BattersController#new as HTML
+  Rendering batters/new.html.erb within layouts/application
+  Rendered batters/_form.erb (20.1ms)
+  Rendered batters/new.html.erb within layouts/application (22.6ms)
+Completed 200 OK in 310ms (Views: 291.5ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/batters" for ::1 at 2020-12-14 14:29:57 -0800
+Processing by BattersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nApYlZ8Lp7zQrV+J23Ybcjql/p7Xx9mtCX9vYdhmI7i0X204KtGAuaDRCsHMcwUyWdGh0tNCZ1VfaBlNTK7dJw==", "batter"=>{"name"=>"Don Mattingly", "tier"=>"2"}, "commit"=>"Create Batter"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "batters" ("name", "tier", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Don Mattingly"], ["tier", 2], ["created_at", "2020-12-14 22:29:57.349728"], ["updated_at", "2020-12-14 22:29:57.349728"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/batters/5
+Completed 302 Found in 5ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/batters/5" for ::1 at 2020-12-14 14:29:57 -0800
+Processing by BattersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mBatter Load (0.3ms)[0m  [1m[34mSELECT  "batters".* FROM "batters" WHERE "batters"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering batters/show.html.erb within layouts/application
+  Rendered batters/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 24ms (Views: 18.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/batters" for ::1 at 2020-12-14 14:29:59 -0800
+Processing by BattersController#index as HTML
+  Rendering batters/index.html.erb within layouts/application
+  [1m[36mBatter Load (0.2ms)[0m  [1m[34mSELECT "batters".* FROM "batters"[0m
+  Rendered batters/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 29ms (Views: 27.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/batters/5" for ::1 at 2020-12-14 14:30:01 -0800
+Processing by BattersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mBatter Load (0.2ms)[0m  [1m[34mSELECT  "batters".* FROM "batters" WHERE "batters"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering batters/show.html.erb within layouts/application
+  Rendered batters/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 34ms (Views: 29.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/batters/5/edit" for ::1 at 2020-12-14 14:30:04 -0800
+Processing by BattersController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mBatter Load (0.2ms)[0m  [1m[34mSELECT  "batters".* FROM "batters" WHERE "batters"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering batters/edit.html.erb within layouts/application
+  Rendered batters/_form.erb (3.5ms)
+  Rendered batters/edit.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 33ms (Views: 29.5ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/batters/5" for ::1 at 2020-12-14 14:30:07 -0800
+Processing by BattersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rP7/2Ir4+sHQwDBKxZt75+0gEAuPbEZnF1BbCoUGleuEq8p1PyLdxKC8ZQLSnmWnjlRPR4vp+J9BRy0mEc5rdA==", "batter"=>{"name"=>"Don Mattingly", "tier"=>"3"}, "commit"=>"Update Batter", "id"=>"5"}
+  [1m[36mBatter Load (0.1ms)[0m  [1m[34mSELECT  "batters".* FROM "batters" WHERE "batters"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "batters" SET "tier" = ?, "updated_at" = ? WHERE "batters"."id" = ?[0m  [["tier", 3], ["updated_at", "2020-12-14 22:30:07.234160"], ["id", 5]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/batters/5
+Completed 302 Found in 6ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/batters/5" for ::1 at 2020-12-14 14:30:07 -0800
+Processing by BattersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mBatter Load (0.3ms)[0m  [1m[34mSELECT  "batters".* FROM "batters" WHERE "batters"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering batters/show.html.erb within layouts/application
+  Rendered batters/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 29ms (Views: 27.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/batters" for ::1 at 2020-12-14 14:30:08 -0800
+Processing by BattersController#index as HTML
+  Rendering batters/index.html.erb within layouts/application
+  [1m[36mBatter Load (0.2ms)[0m  [1m[34mSELECT "batters".* FROM "batters"[0m
+  Rendered batters/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 26ms (Views: 24.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/pitchers/new" for ::1 at 2020-12-14 14:30:16 -0800
+Processing by PitchersController#new as HTML
+  Rendering pitchers/new.html.erb within layouts/application
+  Rendered pitchers/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 35ms (Views: 23.6ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/pitchers" for ::1 at 2020-12-14 14:30:26 -0800
+Processing by PitchersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YCcE8ccKZSN5aVCNW97+dXfq3vDpjkgnqZCVIW+JjolIcjFcctBCJgkVBcVM2+A1FJ6BvO0L9t//h+MN+0FwFg==", "pitcher"=>{"name"=>"Goose Gossage", "tier"=>"2"}, "commit"=>"Create Pitcher"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "pitchers" ("name", "tier", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Goose Gossage"], ["tier", 2], ["created_at", "2020-12-14 22:30:26.807409"], ["updated_at", "2020-12-14 22:30:26.807409"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/pitchers/3
+Completed 302 Found in 6ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/pitchers/3" for ::1 at 2020-12-14 14:30:26 -0800
+Processing by PitchersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPitcher Load (0.3ms)[0m  [1m[34mSELECT  "pitchers".* FROM "pitchers" WHERE "pitchers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering pitchers/show.html.erb within layouts/application
+  Rendered pitchers/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 27ms (Views: 23.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/pitchers" for ::1 at 2020-12-14 14:30:29 -0800
+Processing by PitchersController#index as HTML
+  Rendering pitchers/index.html.erb within layouts/application
+  [1m[36mPitcher Load (0.3ms)[0m  [1m[34mSELECT "pitchers".* FROM "pitchers"[0m
+  Rendered pitchers/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 29ms (Views: 27.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/pitchers/new" for ::1 at 2020-12-14 14:30:30 -0800
+Processing by PitchersController#new as HTML
+  Rendering pitchers/new.html.erb within layouts/application
+  Rendered pitchers/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 32ms (Views: 30.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/pitchers" for ::1 at 2020-12-14 14:30:47 -0800
+Processing by PitchersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"95WcZsgJfWKIlfj9uvE6kFekZtxM0mUCt44Oe3C8P77fwKnLfdNaZ/jprbWt9CTQNNA5kEhX2/rhmXhX5HTBIQ==", "pitcher"=>{"name"=>"Dennis Martinez", "tier"=>"1"}, "commit"=>"Create Pitcher"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "pitchers" ("name", "tier", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Dennis Martinez"], ["tier", 1], ["created_at", "2020-12-14 22:30:47.156374"], ["updated_at", "2020-12-14 22:30:47.156374"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/pitchers/4
+Completed 302 Found in 5ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/pitchers/4" for ::1 at 2020-12-14 14:30:47 -0800
+Processing by PitchersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPitcher Load (0.2ms)[0m  [1m[34mSELECT  "pitchers".* FROM "pitchers" WHERE "pitchers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering pitchers/show.html.erb within layouts/application
+  Rendered pitchers/show.html.erb within layouts/application (33.2ms)
+Completed 200 OK in 54ms (Views: 51.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/pitchers" for ::1 at 2020-12-14 14:30:50 -0800
+Processing by PitchersController#index as HTML
+  Rendering pitchers/index.html.erb within layouts/application
+  [1m[36mPitcher Load (0.2ms)[0m  [1m[34mSELECT "pitchers".* FROM "pitchers"[0m
+  Rendered pitchers/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 30ms (Views: 27.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/pitchers/new" for ::1 at 2020-12-14 14:39:43 -0800
+Processing by PitchersController#new as HTML
+  Rendering pitchers/new.html.erb within layouts/application
+  Rendered pitchers/_form.erb (3.9ms)
+  Rendered pitchers/new.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 30ms (Views: 28.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/plate_appearances/main" for ::1 at 2020-12-14 14:49:37 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PlateAppearancesController#show as HTML
+  Parameters: {"id"=>"main"}
+  [1m[36mPlateAppearance Load (0.2ms)[0m  [1m[34mSELECT  "plate_appearances".* FROM "plate_appearances" WHERE "plate_appearances"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 18ms (ActiveRecord: 0.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find PlateAppearance with 'id'=main):
+  
+app/controllers/plate_appearances_controller.rb:10:in `show'
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.7ms)
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (24.9ms)
+Started GET "/main" for ::1 at 2020-12-14 14:51:09 -0800
+Processing by PlateAppearancesController#main as HTML
+  Rendering plate_appearances/main.erb within layouts/application
+  Rendered plate_appearances/main.erb within layouts/application (0.6ms)
+Completed 200 OK in 382ms (Views: 381.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pitchers/new" for ::1 at 2020-12-14 14:51:15 -0800
+Processing by PitchersController#new as HTML
+  Rendering pitchers/new.html.erb within layouts/application
+  Rendered pitchers/_form.erb (20.9ms)
+  Rendered pitchers/new.html.erb within layouts/application (22.1ms)
+Completed 200 OK in 76ms (Views: 59.7ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/pitchers" for ::1 at 2020-12-14 14:51:29 -0800
+Processing by PitchersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ete1RnWdWRGc+tk2mkAxll5hAxdtWcaaG7UFSYlsgZI6goDrwEd+FOyGjH6NRS/WPRVcW2nceGJNonNlHaR/DQ==", "pitcher"=>{"name"=>"Chris Bosio", "tier"=>"3"}, "commit"=>"Create Pitcher"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "pitchers" ("name", "tier", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Chris Bosio"], ["tier", 3], ["created_at", "2020-12-14 22:51:29.057344"], ["updated_at", "2020-12-14 22:51:29.057344"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/pitchers/5
+Completed 302 Found in 6ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/pitchers/5" for ::1 at 2020-12-14 14:51:29 -0800
+Processing by PitchersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPitcher Load (0.2ms)[0m  [1m[34mSELECT  "pitchers".* FROM "pitchers" WHERE "pitchers"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering pitchers/show.html.erb within layouts/application
+  Rendered pitchers/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 20ms (Views: 17.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/pitchers" for ::1 at 2020-12-14 14:51:32 -0800
+Processing by PitchersController#index as HTML
+  Rendering pitchers/index.html.erb within layouts/application
+  [1m[36mPitcher Load (0.2ms)[0m  [1m[34mSELECT "pitchers".* FROM "pitchers"[0m
+  Rendered pitchers/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 49ms (Views: 46.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/pitchersd" for ::1 at 2020-12-14 14:51:46 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/pitchersd"):
+  
+actionpack (5.0.7.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.7.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.7.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.7.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.7.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.7.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.7.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.7.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.0.7.2) lib/rails/engine.rb:522:in `call'
+rack (2.2.3) lib/rack/handler/webrick.rb:95:in `service'
+/Users/davidwisecarver/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+/Users/davidwisecarver/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+/Users/davidwisecarver/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered collection of /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [22 times] (13.4ms)
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.6ms)
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.4ms)
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (47.5ms)
+Started GET "/main" for ::1 at 2020-12-14 14:55:33 -0800
+Processing by PlateAppearancesController#main as HTML
+  Rendering plate_appearances/main.erb within layouts/application
+  Rendered plate_appearances/main.erb within layouts/application (1.0ms)
+Completed 200 OK in 58ms (Views: 56.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/plate_appearances/new" for ::1 at 2020-12-14 14:55:35 -0800
+Processing by PlateAppearancesController#new as HTML
+  Rendering plate_appearances/new.html.erb within layouts/application
+  [1m[36mBatter Load (0.4ms)[0m  [1m[34mSELECT "batters".* FROM "batters"[0m
+  [1m[36mPitcher Load (0.2ms)[0m  [1m[34mSELECT "pitchers".* FROM "pitchers"[0m
+  Rendered plate_appearances/new.html.erb within layouts/application (16.9ms)
+Completed 200 OK in 51ms (Views: 41.3ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/plate_appearances" for ::1 at 2020-12-14 14:55:44 -0800
+Processing by PlateAppearancesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vXVQZfAPcNtH4WJ4ORR3WCAA64Aqys+xpxae++G6prOVIGXIRdVX3jedNzAuEWkYQ3S0zC5PcUnxAejXdXJYLA==", "plate_appearance"=>{"batter_id"=>"4", "pitcher_id"=>"3"}, "commit"=>"Simulate At-Bat"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "plate_appearances" ("batter_id", "pitcher_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["batter_id", 4], ["pitcher_id", 3], ["created_at", "2020-12-14 22:55:44.307937"], ["updated_at", "2020-12-14 22:55:44.307937"]]
+  [1m[35m (6.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/batters/7
+Completed 302 Found in 10ms (ActiveRecord: 7.0ms)
+
+
+Started GET "/batters/7" for ::1 at 2020-12-14 14:55:44 -0800
+Processing by BattersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mBatter Load (0.4ms)[0m  [1m[34mSELECT  "batters".* FROM "batters" WHERE "batters"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Batter with 'id'=7):
+  
+app/controllers/batters_controller.rb:7:in `show'
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.9ms)
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendering /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/davidwisecarver/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (26.5ms)
+Started POST "/plate_appearances" for ::1 at 2020-12-14 14:56:20 -0800
+Processing by PlateAppearancesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bmQQxyAcK0S66fVp9TCWBf4OJd/TvUmFKGtJMoVDpR5GMSVqlcYMQcqVoCHiNYhFnXp6k9c4931+fD8eEYtbgQ==", "plate_appearance"=>{"batter_id"=>"4", "pitcher_id"=>"3"}, "commit"=>"Simulate At-Bat"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "plate_appearances" ("batter_id", "pitcher_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["batter_id", 4], ["pitcher_id", 3], ["created_at", "2020-12-14 22:56:20.962389"], ["updated_at", "2020-12-14 22:56:20.962389"]]
+  [1m[35m (6.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/plate_appearances/8
+Completed 302 Found in 17ms (ActiveRecord: 7.5ms)
+
+
+Started GET "/plate_appearances/8" for ::1 at 2020-12-14 14:56:20 -0800
+Processing by PlateAppearancesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mPlateAppearance Load (0.2ms)[0m  [1m[34mSELECT  "plate_appearances".* FROM "plate_appearances" WHERE "plate_appearances"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering plate_appearances/show.html.erb within layouts/application
+  [1m[36mBatter Load (0.2ms)[0m  [1m[34mSELECT  "batters".* FROM "batters" WHERE "batters"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPitcher Load (0.2ms)[0m  [1m[34mSELECT  "pitchers".* FROM "pitchers" WHERE "pitchers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered plate_appearances/show.html.erb within layouts/application (26.0ms)
+Completed 200 OK in 46ms (Views: 43.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/plate_appearances" for ::1 at 2020-12-14 14:56:25 -0800
+Processing by PlateAppearancesController#index as HTML
+  Rendering plate_appearances/index.html.erb within layouts/application
+  [1m[36mPlateAppearance Load (0.3ms)[0m  [1m[34mSELECT "plate_appearances".* FROM "plate_appearances"[0m
+  [1m[36mBatter Load (0.2ms)[0m  [1m[34mSELECT  "batters".* FROM "batters" WHERE "batters"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPitcher Load (0.2ms)[0m  [1m[34mSELECT  "pitchers".* FROM "pitchers" WHERE "pitchers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "batters".* FROM "batters" WHERE "batters"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "pitchers".* FROM "pitchers" WHERE "pitchers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "batters".* FROM "batters" WHERE "batters"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "pitchers".* FROM "pitchers" WHERE "pitchers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBatter Load (0.1ms)[0m  [1m[34mSELECT  "batters".* FROM "batters" WHERE "batters"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPitcher Load (0.2ms)[0m  [1m[34mSELECT  "pitchers".* FROM "pitchers" WHERE "pitchers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "batters".* FROM "batters" WHERE "batters"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "pitchers".* FROM "pitchers" WHERE "pitchers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBatter Load (0.2ms)[0m  [1m[34mSELECT  "batters".* FROM "batters" WHERE "batters"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "pitchers".* FROM "pitchers" WHERE "pitchers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "batters".* FROM "batters" WHERE "batters"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPitcher Load (0.2ms)[0m  [1m[34mSELECT  "pitchers".* FROM "pitchers" WHERE "pitchers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "batters".* FROM "batters" WHERE "batters"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "pitchers".* FROM "pitchers" WHERE "pitchers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered plate_appearances/index.html.erb within layouts/application (25.4ms)
+Completed 200 OK in 50ms (Views: 46.0ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/main" for ::1 at 2020-12-14 14:56:48 -0800
+Processing by PlateAppearancesController#main as HTML
+  Rendering plate_appearances/main.erb within layouts/application
+  Rendered plate_appearances/main.erb within layouts/application (1.0ms)
+Completed 200 OK in 26ms (Views: 24.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/plate_appearances/new" for ::1 at 2020-12-14 14:56:50 -0800
+Processing by PlateAppearancesController#new as HTML
+  Rendering plate_appearances/new.html.erb within layouts/application
+  [1m[36mBatter Load (0.3ms)[0m  [1m[34mSELECT "batters".* FROM "batters"[0m
+  [1m[36mPitcher Load (0.1ms)[0m  [1m[34mSELECT "pitchers".* FROM "pitchers"[0m
+  Rendered plate_appearances/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 32ms (Views: 30.5ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/plate_appearances" for ::1 at 2020-12-14 14:56:56 -0800
+Processing by PlateAppearancesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DFhMWAprq/U4Vgpa/U+JYUqBKjBb0T7wDuX6YygPS0AkDXn1v7GM8EgqXxLqSpchKfV1fF9UgAhY8oxPvMe13w==", "plate_appearance"=>{"batter_id"=>"2", "pitcher_id"=>"5"}, "commit"=>"Simulate At-Bat"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "plate_appearances" ("batter_id", "pitcher_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["batter_id", 2], ["pitcher_id", 5], ["created_at", "2020-12-14 22:56:56.692312"], ["updated_at", "2020-12-14 22:56:56.692312"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/plate_appearances/9
+Completed 302 Found in 5ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/plate_appearances/9" for ::1 at 2020-12-14 14:56:56 -0800
+Processing by PlateAppearancesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mPlateAppearance Load (0.1ms)[0m  [1m[34mSELECT  "plate_appearances".* FROM "plate_appearances" WHERE "plate_appearances"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering plate_appearances/show.html.erb within layouts/application
+  [1m[36mBatter Load (0.1ms)[0m  [1m[34mSELECT  "batters".* FROM "batters" WHERE "batters"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPitcher Load (0.1ms)[0m  [1m[34mSELECT  "pitchers".* FROM "pitchers" WHERE "pitchers"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered plate_appearances/show.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 24ms (Views: 22.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/plate_appearances" for ::1 at 2020-12-14 14:57:01 -0800
+Processing by PlateAppearancesController#index as HTML
+  Rendering plate_appearances/index.html.erb within layouts/application
+  [1m[36mPlateAppearance Load (0.3ms)[0m  [1m[34mSELECT "plate_appearances".* FROM "plate_appearances"[0m
+  [1m[36mBatter Load (0.1ms)[0m  [1m[34mSELECT  "batters".* FROM "batters" WHERE "batters"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPitcher Load (0.2ms)[0m  [1m[34mSELECT  "pitchers".* FROM "pitchers" WHERE "pitchers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "batters".* FROM "batters" WHERE "batters"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "pitchers".* FROM "pitchers" WHERE "pitchers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "batters".* FROM "batters" WHERE "batters"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "pitchers".* FROM "pitchers" WHERE "pitchers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBatter Load (0.1ms)[0m  [1m[34mSELECT  "batters".* FROM "batters" WHERE "batters"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPitcher Load (0.2ms)[0m  [1m[34mSELECT  "pitchers".* FROM "pitchers" WHERE "pitchers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "batters".* FROM "batters" WHERE "batters"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "pitchers".* FROM "pitchers" WHERE "pitchers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBatter Load (0.1ms)[0m  [1m[34mSELECT  "batters".* FROM "batters" WHERE "batters"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "pitchers".* FROM "pitchers" WHERE "pitchers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "batters".* FROM "batters" WHERE "batters"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPitcher Load (0.1ms)[0m  [1m[34mSELECT  "pitchers".* FROM "pitchers" WHERE "pitchers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "batters".* FROM "batters" WHERE "batters"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "pitchers".* FROM "pitchers" WHERE "pitchers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "batters".* FROM "batters" WHERE "batters"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPitcher Load (0.1ms)[0m  [1m[34mSELECT  "pitchers".* FROM "pitchers" WHERE "pitchers"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered plate_appearances/index.html.erb within layouts/application (27.1ms)
+Completed 200 OK in 73ms (Views: 70.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/main" for ::1 at 2020-12-14 14:57:04 -0800
+Processing by PlateAppearancesController#main as HTML
+  Rendering plate_appearances/main.erb within layouts/application
+  Rendered plate_appearances/main.erb within layouts/application (1.0ms)
+Completed 200 OK in 28ms (Views: 26.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/plate_appearances/new" for ::1 at 2020-12-14 14:57:14 -0800
+Processing by PlateAppearancesController#new as HTML
+  Rendering plate_appearances/new.html.erb within layouts/application
+  [1m[36mBatter Load (0.3ms)[0m  [1m[34mSELECT "batters".* FROM "batters"[0m
+  [1m[36mPitcher Load (0.1ms)[0m  [1m[34mSELECT "pitchers".* FROM "pitchers"[0m
+  Rendered plate_appearances/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 33ms (Views: 30.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/plate_appearances/new" for ::1 at 2020-12-14 14:57:56 -0800
+Processing by PlateAppearancesController#new as HTML
+  Rendering plate_appearances/new.html.erb within layouts/application
+  [1m[36mBatter Load (0.2ms)[0m  [1m[34mSELECT "batters".* FROM "batters"[0m
+  [1m[36mPitcher Load (0.2ms)[0m  [1m[34mSELECT "pitchers".* FROM "pitchers"[0m
+  Rendered plate_appearances/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 33ms (Views: 30.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/plate_appearances/new" for ::1 at 2020-12-14 14:58:34 -0800
+Processing by PlateAppearancesController#new as HTML
+  Rendering plate_appearances/new.html.erb within layouts/application
+  [1m[36mBatter Load (0.2ms)[0m  [1m[34mSELECT "batters".* FROM "batters"[0m
+  [1m[36mPitcher Load (0.1ms)[0m  [1m[34mSELECT "pitchers".* FROM "pitchers"[0m
+  Rendered plate_appearances/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 34ms (Views: 31.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/plate_appearances/new" for ::1 at 2020-12-14 14:58:48 -0800
+Processing by PlateAppearancesController#new as HTML
+  Rendering plate_appearances/new.html.erb within layouts/application
+  [1m[36mBatter Load (0.2ms)[0m  [1m[34mSELECT "batters".* FROM "batters"[0m
+  [1m[36mPitcher Load (0.2ms)[0m  [1m[34mSELECT "pitchers".* FROM "pitchers"[0m
+  Rendered plate_appearances/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 32ms (Views: 30.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/plate_appearances" for ::1 at 2020-12-14 14:58:56 -0800
+Processing by PlateAppearancesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BKjWm1YdXQ/xhaNWR9V/0UKd3IbjUACF2ToJ+bHmzZMs/eM248d6CoH59h5Q0GGRIemDyufVvn2PLX/VJS4zDA==", "plate_appearance"=>{"batter_id"=>"2", "pitcher_id"=>"3"}, "commit"=>"Simulate At-Bat"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "plate_appearances" ("batter_id", "pitcher_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["batter_id", 2], ["pitcher_id", 3], ["created_at", "2020-12-14 22:58:56.659130"], ["updated_at", "2020-12-14 22:58:56.659130"]]
+  [1m[35m (6.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/plate_appearances/10
+Completed 302 Found in 11ms (ActiveRecord: 7.4ms)
+
+
+Started GET "/plate_appearances/10" for ::1 at 2020-12-14 14:58:56 -0800
+Processing by PlateAppearancesController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mPlateAppearance Load (0.1ms)[0m  [1m[34mSELECT  "plate_appearances".* FROM "plate_appearances" WHERE "plate_appearances"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering plate_appearances/show.html.erb within layouts/application
+  [1m[36mBatter Load (0.1ms)[0m  [1m[34mSELECT  "batters".* FROM "batters" WHERE "batters"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPitcher Load (0.2ms)[0m  [1m[34mSELECT  "pitchers".* FROM "pitchers" WHERE "pitchers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered plate_appearances/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 28ms (Views: 25.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/plate_appearances/10" for ::1 at 2020-12-14 14:59:18 -0800
+Processing by PlateAppearancesController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mPlateAppearance Load (0.1ms)[0m  [1m[34mSELECT  "plate_appearances".* FROM "plate_appearances" WHERE "plate_appearances"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering plate_appearances/show.html.erb within layouts/application
+  [1m[36mBatter Load (0.1ms)[0m  [1m[34mSELECT  "batters".* FROM "batters" WHERE "batters"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPitcher Load (0.1ms)[0m  [1m[34mSELECT  "pitchers".* FROM "pitchers" WHERE "pitchers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered plate_appearances/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 31ms (Views: 28.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/main" for ::1 at 2020-12-14 15:01:14 -0800
+Processing by PlateAppearancesController#main as HTML
+  Rendering plate_appearances/main.erb within layouts/application
+  Rendered plate_appearances/main.erb within layouts/application (0.9ms)
+Completed 200 OK in 29ms (Views: 27.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/batters/new" for ::1 at 2020-12-14 15:04:15 -0800
+Processing by BattersController#new as HTML
+  Rendering batters/new.html.erb within layouts/application
+  Rendered batters/_form.erb (4.9ms)
+  Rendered batters/new.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 55ms (Views: 53.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/batters" for ::1 at 2020-12-14 15:04:24 -0800
+Processing by BattersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"v296d0ZxP18uIvFV0TCTkA/g+ARAF0yKo8kzVEm+8ZuXOk/a86sYWl5epB3GNY3QbJSnSESS8nL13kV43XYPBA==", "batter"=>{"name"=>"Rachael Wisecarver", "tier"=>"1"}, "commit"=>"Create Batter"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "batters" ("name", "tier", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Rachael Wisecarver"], ["tier", 1], ["created_at", "2020-12-14 23:04:24.156958"], ["updated_at", "2020-12-14 23:04:24.156958"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/batters/6
+Completed 302 Found in 5ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/batters/6" for ::1 at 2020-12-14 15:04:24 -0800
+Processing by BattersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mBatter Load (0.3ms)[0m  [1m[34mSELECT  "batters".* FROM "batters" WHERE "batters"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering batters/show.html.erb within layouts/application
+  Rendered batters/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 24ms (Views: 20.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/main" for ::1 at 2020-12-14 15:04:27 -0800
+Processing by PlateAppearancesController#main as HTML
+  Rendering plate_appearances/main.erb within layouts/application
+  Rendered plate_appearances/main.erb within layouts/application (1.0ms)
+Completed 200 OK in 26ms (Views: 24.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pitchers/new" for ::1 at 2020-12-14 15:04:29 -0800
+Processing by PitchersController#new as HTML
+  Rendering pitchers/new.html.erb within layouts/application
+  Rendered pitchers/_form.erb (3.1ms)
+  Rendered pitchers/new.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 28ms (Views: 26.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/pitchers" for ::1 at 2020-12-14 15:04:36 -0800
+Processing by PitchersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LLYYUd1gBnwEIzbzTLMZ4dOUQnbdKpaxovnP2SxkbBkE4y38aLoheXRfY7tbtgehsOAdOtmvKEn07rn1uKyShg==", "pitcher"=>{"name"=>"David Wisecarver", "tier"=>"1"}, "commit"=>"Create Pitcher"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "pitchers" ("name", "tier", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "David Wisecarver"], ["tier", 1], ["created_at", "2020-12-14 23:04:36.486334"], ["updated_at", "2020-12-14 23:04:36.486334"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/pitchers/6
+Completed 302 Found in 4ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/pitchers/6" for ::1 at 2020-12-14 15:04:36 -0800
+Processing by PitchersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPitcher Load (0.1ms)[0m  [1m[34mSELECT  "pitchers".* FROM "pitchers" WHERE "pitchers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering pitchers/show.html.erb within layouts/application
+  Rendered pitchers/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 20ms (Views: 18.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/main" for ::1 at 2020-12-14 15:04:38 -0800
+Processing by PlateAppearancesController#main as HTML
+  Rendering plate_appearances/main.erb within layouts/application
+  Rendered plate_appearances/main.erb within layouts/application (0.6ms)
+Completed 200 OK in 27ms (Views: 25.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/plate_appearances/new" for ::1 at 2020-12-14 15:04:40 -0800
+Processing by PlateAppearancesController#new as HTML
+  Rendering plate_appearances/new.html.erb within layouts/application
+  [1m[36mBatter Load (0.2ms)[0m  [1m[34mSELECT "batters".* FROM "batters"[0m
+  [1m[36mPitcher Load (0.2ms)[0m  [1m[34mSELECT "pitchers".* FROM "pitchers"[0m
+  Rendered plate_appearances/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 28ms (Views: 26.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/plate_appearances" for ::1 at 2020-12-14 15:04:48 -0800
+Processing by PlateAppearancesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FNAkCdksAdqh9EhXWg4scIDvIVYVUPFhEqxaioqRAbs8hRGkbPYm39GIHR9NCzIw45t+GhHVT5lEuyymHln/JA==", "plate_appearance"=>{"batter_id"=>"6", "pitcher_id"=>"6"}, "commit"=>"Simulate At-Bat"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "plate_appearances" ("batter_id", "pitcher_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["batter_id", 6], ["pitcher_id", 6], ["created_at", "2020-12-14 23:04:48.726479"], ["updated_at", "2020-12-14 23:04:48.726479"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/plate_appearances/11
+Completed 302 Found in 5ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/plate_appearances/11" for ::1 at 2020-12-14 15:04:48 -0800
+Processing by PlateAppearancesController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mPlateAppearance Load (0.5ms)[0m  [1m[34mSELECT  "plate_appearances".* FROM "plate_appearances" WHERE "plate_appearances"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering plate_appearances/show.html.erb within layouts/application
+  [1m[36mBatter Load (0.1ms)[0m  [1m[34mSELECT  "batters".* FROM "batters" WHERE "batters"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mPitcher Load (0.1ms)[0m  [1m[34mSELECT  "pitchers".* FROM "pitchers" WHERE "pitchers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered plate_appearances/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 26ms (Views: 22.6ms | ActiveRecord: 0.7ms)
+
+

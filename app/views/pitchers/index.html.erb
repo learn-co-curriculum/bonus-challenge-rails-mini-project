@@ -1,0 +1,5 @@
+<h1>Pitchers</h1>
+<%@pitchers.each do |pitcher|%>
+    <p><%= link_to pitcher.name, pitcher_path(pitcher)%>, Tier: <%= pitcher.tier %></p>
+<%end%>
+<%= link_to "Create a new pitcher", new_pitcher_path%>
