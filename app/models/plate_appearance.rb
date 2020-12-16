@@ -21,4 +21,5 @@ class PlateAppearance < ApplicationRecord
         rand = rand(1000)
         pset.reject {|k, v| rand > v }.min_by {|k,v|v}.first.upcase
     end
+
 end

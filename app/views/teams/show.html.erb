@@ -1,0 +1,11 @@
+<h1><%= @team.name %></h1>
+    <h2>Batters</h2>
+        <% @team.batters.each do |b| %>
+            <div><%=link_to b.name, batter_path(b)%></div>
+        <%end%><br><br> 
+    <h2>Pitchers</h2>
+        <% @team.pitchers.each do |p| %>
+            <div><%=link_to p.name, pitcher_path(p)%></div>
+        <%end%>
+<br><br>
+<%= link_to 'Back To Main', main_path %>

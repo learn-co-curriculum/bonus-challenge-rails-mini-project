@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20201214191518) do
+ActiveRecord::Schema.define(version: 20201215234756) do
 
   create_table "batters", force: :cascade do |t|
     t.string   "name"
     t.integer  "tier"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "team_id"
   end
 
   create_table "pitchers", force: :cascade do |t|
@@ -24,6 +25,7 @@ ActiveRecord::Schema.define(version: 20201214191518) do
     t.integer  "tier"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "team_id"
   end
 
   create_table "plate_appearances", force: :cascade do |t|
@@ -31,6 +33,13 @@ ActiveRecord::Schema.define(version: 20201214191518) do
     t.integer  "pitcher_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "teams", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "api_team_id"
   end
 
 end

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :teams, only: [:index, :show]
   resources :batters, except: :destroy
   resources :pitchers, except: :destroy
   resources :plate_appearances, except: :destroy

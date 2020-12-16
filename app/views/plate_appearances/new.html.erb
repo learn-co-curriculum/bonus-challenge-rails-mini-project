@@ -1,7 +1,9 @@
 <h1>Plate Appearance Simulator</h1>
 <%= form_for @plate_appearance do |f| %>
+    
     <%= f.label 'Batter:'%>
-    <%= f.collection_select(:batter_id, Batter.all, :id, :name) %>
+    <%= f.collection_select(:batter_id, Batter.all, :id, :name) %> 
+
     <br>
     <%= f.label 'Pitcher:'%>
     <%= f.collection_select(:pitcher_id, Pitcher.all, :id, :name) %>
