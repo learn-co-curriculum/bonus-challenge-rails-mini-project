@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20201215234756) do
+ActiveRecord::Schema.define(version: 20201216005003) do
 
   create_table "batters", force: :cascade do |t|
     t.string   "name"
@@ -18,6 +18,18 @@ ActiveRecord::Schema.define(version: 20201215234756) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "team_id"
+    t.integer  "pa"
+    t.integer  "bb"
+    t.integer  "hbp"
+    t.integer  "h"
+    t.integer  "d"
+    t.integer  "t"
+    t.integer  "hr"
+    t.integer  "so"
+    t.float    "avg"
+    t.float    "obp"
+    t.float    "slg"
+    t.float    "ops"
   end
 
   create_table "pitchers", force: :cascade do |t|
@@ -26,6 +38,21 @@ ActiveRecord::Schema.define(version: 20201215234756) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "team_id"
+    t.integer  "tbf"
+    t.integer  "bb"
+    t.integer  "hbp"
+    t.integer  "h"
+    t.integer  "d"
+    t.integer  "t"
+    t.integer  "hr"
+    t.integer  "so"
+    t.float    "avg"
+    t.float    "obp"
+    t.float    "slg"
+    t.float    "ops"
+    t.float    "era"
+    t.integer  "w"
+    t.integer  "l"
   end
 
   create_table "plate_appearances", force: :cascade do |t|

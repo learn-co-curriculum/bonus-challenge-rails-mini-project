@@ -1,4 +1,11 @@
-<h1><%= @batter.name%>, Tier: <%= @batter.tier %></h1>
+<h1><%= @batter.name%></h1>
+    <div>AVG: <%= @batter.average %></div>
+    <div>OBP: <%= @batter.on_base_percentage %></div>
+    <div>SLG: <%= @batter.slugging_percentage %></div>
+    <div>OPS: <%= @batter.on_base_plus_slugging_percentage %></div>
+    <div>Home Runs: <%= @batter.hr %></div>
+    <div>Strikeouts: <%= @batter.so %></div>
+    <div>Walks: <%= @batter.bb %></div>
 <p><%= link_to "Edit Batter", edit_batter_path %></p>
 <p><%= link_to "See All", batters_path %></p>
 <%= link_to 'Main Menu', main_path %>

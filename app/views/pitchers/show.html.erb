@@ -1,4 +1,11 @@
-<h1><%= @pitcher.name%>, Tier: <%= @pitcher.tier %></h1>
+<h1><%= @pitcher.name%></h1>
+    <div>ERA: <%= @pitcher.era %></div>
+    <div>Wins: <%= @pitcher.w %></div>
+    <div>Losses: <%= @pitcher.l %></div>
+    <div>Strikeouts: <%= @pitcher.so %></div>
+    <div>Walks: <%= @pitcher.bb %></div>
+
+
 <p><%= link_to "Edit Pitcher", edit_pitcher_path %></p>
 <p><%= link_to "See All", pitchers_path %></p>
 <%= link_to 'Main Menu', main_path %>
